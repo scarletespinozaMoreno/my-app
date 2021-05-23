@@ -22,9 +22,9 @@ export default class SingleRoom extends Component {
                     <div className="row my-5">
                         <div className="col-md-6 col-12 mx-auto">
                             <div className="card shadow-lg border-0 p-4 error">
-                                <h1 className="text-center display-4">SORRY</h1>
-                                <h3>No such room could be found...</h3>
-                                <Link to="/rooms" className="btn btn-warning mt-4 ">Back to Rooms</Link>
+                                <h1 className="text-center display-4">Lo siento</h1>
+                                <h3>No disponible</h3>
+                                <Link to="/rooms" className="btn btn-warning mt-4 ">Volver</Link>
                             </div> 
                         </div>
                     </div>
@@ -37,7 +37,7 @@ export default class SingleRoom extends Component {
             <StyledHero img={mainImg || this.state.defaultBcg }>
            
             <Banner title={`${name} room`}>
-                    <Link to="/rooms" className="btn btn-primary">Back To Rooms</Link>
+                    <Link to="/rooms" className="btn btn-primary">Volver a habitaciones</Link>
             </Banner>
             </StyledHero>
             <section className="single-room container">
