@@ -127,9 +127,9 @@ h6 {
   -ms-transition: .5s linear;
   -o-transition: .5s linear;
 }
-.bg-transparent.scrolled {
+.navbar {
   background-color:  #38589b!important;
-  transition:500ms ease;
+  
 }
 
 .navbar-brand{
