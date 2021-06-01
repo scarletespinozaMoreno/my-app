@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { RoomContext } from '../context';
+import { RoomContext } from '../context.jsx';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import DatePicker from "react-datepicker";
