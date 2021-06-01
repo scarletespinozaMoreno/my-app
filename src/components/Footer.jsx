@@ -1,30 +1,33 @@
 import React from 'react'
-import { FaFacebookSquare,FaLinkedin } from 'react-icons/fa';
-import {IoLogoYoutube} from 'react-icons/io';
-import { AiFillInstagram } from 'react-icons/ai';
+ 
+import { SocialIcon } from 'react-social-icons';
+
 
 const Footer = () => {
     return (
-        <footer id="sticky-footer" className="bg-light text-dark-50 ">
-            <div className="container py-1">
-                <div className="row">
-                    <div className="col-md-6 col-12 my-auto">
-                        <small>Copyright &copy; service-soft Developer</small>
-                    </div>
-                    <div className="col-md-6 col-12">
-                        <div className="d-flex float-right">
-                            <a href="https://es-la.facebook.com/riosymontanas.ec/">
-                                <FaFacebookSquare className="connect text-dark" /></a>
-                            <a href="https://www.linkedin.com/in/lekhraj-kashyap-b1aa15139/">
-                                <FaLinkedin className="connect text-dark" /></a>
-                            <a href="https://www.instagram.com/haryanvideveloper_official/">
-                                <AiFillInstagram className="connect text-dark" /></a>
-                            <a href="https://www.youtube.com/channel/UCDGDXevsQo67KVkmjrd9ruQ?view_as=subscriber">
-                                <IoLogoYoutube className="connect text-dark" /></a>
+        <footer  className="bg-light text-dark-50">
+         
+                <div className="col-md-2 col-20 mx-auto ">
+                  
+                        <small className="row justify-content-md-center">Copyright &copy; Service - Soft Developer</small>
+                        
+              
+                        <div className="row justify-content-md-center col-md  ">
+                                <div className="col-md-2 col-6  my-2" >
+                       
+                                <SocialIcon url="https://www.facebook.com/riosymontanas.ec" />
+                                </div>   
+                                <div className="col-md-2 col-6   my-2" >
+                                <SocialIcon url="https://www.instagram.com/riosymontanas.ec/"/>
+                                </div>
+                                <div className="col-md-2 col-6   my-2" >
+                                <SocialIcon url="https://www.youtube.com/watch?v=sh_cEPAiKns"/>
+                                </div>
+                        
                         </div>
-                    </div>
                 </div>
-            </div>
+                
+             
         </footer>
     )
 }
