@@ -5,29 +5,30 @@ import { SocialIcon } from 'react-social-icons';
 
 const Footer = () => {
     return (
-        <footer  className="bg-light text-dark-50">
-         
-                <div className="col-md-2 col-20 mx-auto ">
-                  
-                        <small className="row justify-content-md-center">Copyright &copy; Service - Soft Developer</small>
+        <footer  className="    bg-light text-dark-50">
+            <div>
+                <div className="row justify-content-center " >
+                
+                        <small  className="col-md-2 col-8 my-2 justify-content-center">Copyright &copy; Service - Soft Developer</small>
                         
-              
-                        <div className="row justify-content-md-center col-md  ">
-                                <div className="col-md-2 col-6  my-2" >
-                       
+                  
+                        <div className=" row justify-content-md-center">
+                                <div className="row justify-content-md-center col-sm-2 col-6 mx-auto my-2 align-self-center" >
+                                <div  className="row col  ">
                                 <SocialIcon url="https://www.facebook.com/riosymontanas.ec" />
-                                </div>   
-                                <div className="col-md-2 col-6   my-2" >
+                                </div>
+                                <div  className="row col ">
                                 <SocialIcon url="https://www.instagram.com/riosymontanas.ec/"/>
                                 </div>
-                                <div className="col-md-2 col-6   my-2" >
+                                <div  className="row col ">
                                 <SocialIcon url="https://www.youtube.com/watch?v=sh_cEPAiKns"/>
+                                </div>
                                 </div>
                         
                         </div>
                 </div>
                 
-             
+            </div>
         </footer>
     )
 }
