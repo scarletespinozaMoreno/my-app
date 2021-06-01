@@ -12,7 +12,7 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import Booknow from './pages/Booknow';
-import Login from './components/Login';
+import Login from './pages/Login';
 import Reset from './components/Reset';
 import {auth } from './firebase'
 function App() {

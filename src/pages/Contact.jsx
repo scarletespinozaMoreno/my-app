@@ -1,6 +1,6 @@
 import React from 'react';
 import {db} from '../firebase';
-
+ 
 
  
 const Contact = () => {
@@ -9,6 +9,8 @@ const [apellido,setApellido]=React.useState('')
 const [email,setEmail]=React.useState('')
 const [mensaje,setMensaje]=React.useState('')
 const [telefono,setTelefono]=React.useState('')
+//const notify=()=>{ }
+
 
 const submitForm=async(e)=>{
     e.preventDefault();
@@ -94,6 +96,7 @@ return (
                                     
                                     <button 
                                     type="submit"
+                                   
                                     className="btn btn-outline-dark btn-lg btn-block">Enviar</button>
                                 </div>
                             </form>
