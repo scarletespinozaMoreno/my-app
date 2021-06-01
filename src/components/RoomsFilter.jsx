@@ -1,6 +1,6 @@
 import React from 'react'
 import {useContext} from 'react'
-import {RoomContext} from '../context.jsx';
+import {RoomContext} from '../context';
 import Title from '../components/Title';
 //to get all unique value
 const getUnique = (items,value) => {
@@ -48,16 +48,16 @@ export default function RoomsFilter({rooms}) {
                     </div>
                 </div>
                 <div className="col-md-4 col-12">
-                    <div className="custom-control custom-checkbox my-3">
+                    <div className="custom-control custom-checkbox my-5">
                         <input type="checkbox" className="custom-control-input" name="breakfast" id="breakfast" checked={breakfast} onChange={handleChange} />
-                        <label htmlFor="breakfast" className="custom-control-label ">Desayuno</label>
+                        <label htmlFor="breakfast" className="custom-control-label">Desayuno</label>
                     </div>
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" className="custom-control-input" name="pets" id="pets" checked={pets} onChange={handleChange} />
                         <label htmlFor="pets" className="custom-control-label">Mascotas</label>
                     </div>
-                    <div className="input-group my-3">
-                        <label htmlFor="size" className="mr-4">Tamaño </label>
+                    <div className="input-group my-5">
+                        <label htmlFor="size" className="mr-3">Tamaño </label>
                         <input type="number" name="minSize" id="size" value={minSize} onChange={handleChange} className="form-control" />
                         <input type="number" name="maxSize" id="size" value={maxSize} onChange={handleChange} className="form-control" />
                     </div>
