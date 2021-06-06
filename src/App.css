@@ -535,3 +535,29 @@ box-shadow: inset 0 -1px 0 #ddd;
   padding: 5px 8px;
 }
 /* end of about us */
+
+/*Login*/
+#registrarBtn { 
+  background-color:#3a629c;
+  color:white;
+ 
+
+}
+
+#registrarBtn:hover {
+  background-color: #3a619ce3;
+  color: white;
+}
+
+#noCuentaBtn{ 
+  background-color: #000000e3;
+  color:white;
+ 
+
+}
+
+#noCuentaBtn:hover {
+  background-color: #000000b0;
+  color: white;
+}
+/* end of about login */

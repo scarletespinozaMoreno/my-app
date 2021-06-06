@@ -90,14 +90,14 @@ const Login = (props) => {
     }, [email, pass, props.history])
 
     return (
-        <div className="container contact">
-        <div className="row">
+        <div className="container contact ">
+        <div className="row ">
             <div className="col-md-8 col-12 mx-auto">
-                <div className="card shadow-lg border-0 p-4">
-                    <div className="mt-5">
+                <div className="card shadow-lg border-0 p-4 mt-5 mb-5">
+                    <div className="mt-2">
                         <h3 className="text-center">
                             {
-                                esRegistro ? 'Registro' : 'Loguear'
+                                esRegistro ? 'Registrarse' : 'Iniciar Sesión'
                             }
                         </h3>
                         <hr/>
@@ -125,17 +125,19 @@ const Login = (props) => {
                                         onChange={ e => setPass(e.target.value) }
                                         value={pass}
                                     />
-                                    <div className="mt-1">
+                                    <div className="mt-3">
                                     <button 
-                                       class="btn btn-outline-primary"
+                                       class="btn w-100"
                                         type="submit"
+                                        id="registrarBtn"
                                     >
                                         {esRegistro ? 'Registrar' : 'Acceder'}
                                     </button> 
                                     </div>
-                                    <div className="mt-1"><button type="button"
-                                        class="btn btn-outline-secondary col-xl-15"
+                                    <div className="mt-3"><button type="button"
+                                        class="btn   w-100"
                                         type="button"
+                                        id="noCuentaBtn"
                                         onClick={() => setEsRegistro(!esRegistro)}
                                     >
                                         {esRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
@@ -144,7 +146,7 @@ const Login = (props) => {
                                     {
                                         !esRegistro ? (
                                             <button 
-                                            type="button" class="btn btn-outline align-self-end btn-sm mt-2"
+                                            type="button" class="btn btn-outline align-self-end w-100 mt-2"
                                                 type="button"
                                                 onClick={() => props.history.push('/Reset')}
                                             >
