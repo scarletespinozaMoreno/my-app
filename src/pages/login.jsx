@@ -3,7 +3,6 @@ import {auth, db} from '../firebase'
 import {withRouter} from 'react-router-dom'
 
 const Login = (props) => {
-
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
@@ -50,12 +49,18 @@ const Login = (props) => {
             console.log(error)
             if(error.code === 'auth/invalid-email'){
                 setError('Email no válido')
+                setEmail('')
+                setPass('')
             }
             if(error.code === 'auth/user-not-found'){
                 setError('Email no registrado')
+                setEmail('')
+                setPass('')
             }
             if(error.code === 'auth/wrong-password'){
                 setError('Contraseña incorrecta')
+                setEmail('')
+                setPass('')
             }
         }
     }, [email, pass, props.history])
@@ -68,11 +73,13 @@ const Login = (props) => {
             await db.collection('usuarios').doc(res.user.email).set({
                 email: res.user.email,
                 uid: res.user.uid
+
             })
             await db.collection(res.user.uid).add({
                 name: 'EJEMPLO->A QUI SE AGREGAN LOS DATOS PARA EL USUARIO ACTUAL ',
                 fecha: Date.now()
             })
+            
             setEmail('')
             setPass('')
             setError(null)
@@ -90,7 +97,7 @@ const Login = (props) => {
     }, [email, pass, props.history])
 
     return (
-        <div className="container contact ">
+        <div className="container mt-5 mb-5 p-5 ">
         <div className="row ">
             <div className="col-md-8 col-12 mx-auto">
                 <div className="card shadow-lg border-0 p-4 mt-5 mb-5">
@@ -111,6 +118,7 @@ const Login = (props) => {
                                             </div>
                                         ) : null
                                     }
+                                    
                                     <input 
                                         type="email" 
                                         className="form-control mb-2"
@@ -127,7 +135,7 @@ const Login = (props) => {
                                     />
                                     <div className="mt-3">
                                     <button 
-                                       class="btn w-100"
+                                       className="btn w-100"
                                         type="submit"
                                         id="registrarBtn"
                                     >
@@ -135,7 +143,7 @@ const Login = (props) => {
                                     </button> 
                                     </div>
                                     <div className="mt-3"><button type="button"
-                                        class="btn   w-100"
+                                        className="btn w-100"
                                         type="button"
                                         id="noCuentaBtn"
                                         onClick={() => setEsRegistro(!esRegistro)}
@@ -146,7 +154,7 @@ const Login = (props) => {
                                     {
                                         !esRegistro ? (
                                             <button 
-                                            type="button" class="btn btn-outline align-self-end w-100 mt-2"
+                                            type="button" className="btn btn-outline align-self-end w-100 mt-2"
                                                 type="button"
                                                 onClick={() => props.history.push('/Reset')}
                                             >

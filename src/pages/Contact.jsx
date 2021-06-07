@@ -45,7 +45,7 @@ const submitForm=async(e)=>{
  
 return (
     <div>
-            <div className="container contact">
+            <div className="container mt-5 mb-5 p-5">
                 <div className="row">
                     <div className="col-md-10 col-12 mx-auto">
                         <div className="card shadow-lg border-0 p-4">

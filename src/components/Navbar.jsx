@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
-import {GrUserSettings} from 'react-icons/gr'
 import jquery from 'jquery';
 // for changing navbar  color
 import {auth} from '../firebase'
@@ -43,7 +42,7 @@ const Navbar = (props) => {
                             {
                         props.firebaseUser !== null ? (
                             <ul className="navbar-nav ml-auto "  >   
-                                <NavLink className="nav-link" exact to="/">Perfil</NavLink>
+                                <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
                                 <button className="btn btn-outline-light" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
                                 
                             </ul>

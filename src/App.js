@@ -9,6 +9,7 @@ import SingleRoom from './pages/SingleRoom';
 import Error from './pages/Error';
 import Navbar from './components/Navbar';
 import About from './pages/About';
+import Profile from './pages/Profile';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import Booknow from './pages/Booknow';
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>
+          <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
           <Route exact path="/rooms/:slug" component={SingleRoom} />
           <Route exact path="/booknow/:slug" component={Booknow} />
