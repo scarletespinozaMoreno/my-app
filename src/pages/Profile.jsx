@@ -19,14 +19,7 @@ const Profile = (props) => {
         }
     }, [props.history])
       
-    const actualizarUsuario = () => {
-        if(!nombreUsuario.trim()){
-            console.log('Nombre Vacío')
-            return
-        }
-        dispatch(actualizarUsuarioAccion(nombreUsuario))
-        setActivarFormulario(false)
-    }
+   
 
 
     return (
@@ -55,7 +48,7 @@ const Profile = (props) => {
                                             <button 
                                                 className="btn btn-dark" 
                                                 type="button" 
-                                                onClick={()=> actualizarUsuario()}
+                                                
                                             >
                                                 Actualizar
                                             </button>
