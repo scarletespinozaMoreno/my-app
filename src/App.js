@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
+import Reservas from './pages/Reservas';
 import SingleRoom from './pages/SingleRoom';
 import Error from './pages/Error';
 import Navbar from './components/Navbar';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>
+          <Route exact path="/Reservas/" component={Reservas}/>
           <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
           <Route exact path="/rooms/:slug" component={SingleRoom} />

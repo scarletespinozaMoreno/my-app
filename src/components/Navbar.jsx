@@ -1,10 +1,10 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink,withRouter} from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
 import jquery from 'jquery';
 // for changing navbar  color
 import {auth} from '../firebase'
-import { withRouter } from "react-router-dom";
+
 jquery(window).scroll(function() {
     jquery('nav').toggleClass('scrolled', jquery(this).scrollTop() > 0);
     })
@@ -42,6 +42,7 @@ const Navbar = (props) => {
                             {
                         props.firebaseUser !== null ? (
                             <ul className="navbar-nav ml-auto "  >   
+                                <NavLink className="nav-link" exact to="/Reservas/">Mis Reservas</NavLink>
                                 <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
                                 <button className="btn btn-outline-light" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
                                 
