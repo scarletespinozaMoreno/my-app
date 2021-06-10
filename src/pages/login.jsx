@@ -69,17 +69,25 @@ const Login = (props) => {
 
         try {
             const res = await auth.createUserWithEmailAndPassword(email, pass)
-            console.log(res.user)
+          //  console.log(res.user)
             await db.collection('usuarios').doc(res.user.email).set({
                 email: res.user.email,
-                uid: res.user.uid
+                uid: res.user.uid,
+                name: 'N/A',
+                photoURL: 'N/A',
+                direction: 'N/A',
+                cellphone:'N/A',
+                ci:'N/A'
+
 
             })
-            await db.collection(res.user.uid).add({
-                name: 'EJEMPLO->A QUI SE AGREGAN LOS DATOS PARA EL USUARIO ACTUAL ',
-                fecha: Date.now()
-            })
-            
+            //en el caso de crear coleciones para los usuarios indiviruales, pero se puede obviar para poenr una coleccion de habitaciones regitradas o en uso. dentro de cada user
+
+           // await db.collection(res.user.uid).add({
+           //     name: 'EJEMPLO->A QUI SE AGREGAN LOS DATOS PARA EL USUARIO ACTUAL ',
+      //      fecha: Date.now()
+       //     })
+        //    
             setEmail('')
             setPass('')
             setError(null)

@@ -2,12 +2,14 @@ import app from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 const firebaseConfig={
-    apiKey: "AIzaSyBEiGPEfE9PFTzRbfQjWhP_KzpcRM3tXG0",
-    authDomain: "basehosteria.firebaseapp.com",
-    projectId: "basehosteria",
-    storageBucket: "basehosteria.appspot.com",
-    messagingSenderId: "710580182831",
-    appId: "1:710580182831:web:ba9ee8f61554622c1d4bda"
+    apiKey: "AIzaSyA9jSfCg4swRBK_E0r04k2sjiOImPNdtaw",
+    authDomain: "fir-web-eec50.firebaseapp.com",
+    databaseURL: "https://fir-web-eec50-default-rtdb.firebaseio.com",
+    projectId: "fir-web-eec50",
+    storageBucket: "fir-web-eec50.appspot.com",
+    messagingSenderId: "490536593367",
+    appId: "1:490536593367:web:d8bfb4e97562ca1aa58d92",
+    measurementId: "G-WG5HFTYRS4"
 }
 //inicializar
 app.initializeApp(firebaseConfig);
