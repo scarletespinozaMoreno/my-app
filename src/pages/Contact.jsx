@@ -44,10 +44,10 @@ const submitForm=async(e)=>{
 
  
 return (
-    <div>
-            <div className="container mt-5 mb-5 p-5">
+    <div className=" row mt-5">
+            <div className=" mt-5 mb-5 p-5">
                 <div className="row">
-                    <div className="col-md-10 col-12 mx-auto">
+                    <div className="col-md-7 col-12 mx-auto">
                         <div className="card shadow-lg border-0 p-4">
                             <h1 className="text-center bg-dark text-white display-4 d-inline-block">Contáctanos</h1>
                             <form onSubmit={submitForm} className="form-group my-5 text-center">
@@ -84,13 +84,13 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row">
-                                    <div className="col-11">
-                                        <textarea className="form-control" row="20" 
+                                <div className="form-group">
+                                  
+                                        <textarea className="form-control"  
                                         onChange={e=>setMensaje(e.target.value)}
                                         value={mensaje}
-                                        placeholder="Su mensaje..." required></textarea>
-                                    </div>
+                                        placeholder="Su mensaje..." required  rows="3"></textarea>
+                                  
                                 </div>
                                 <div className="mt-5 col-md-6 col-12 mx-auto  ">
                                     
