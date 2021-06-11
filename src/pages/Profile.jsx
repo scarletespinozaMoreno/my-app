@@ -84,6 +84,7 @@ const Profile = (props) => {
                             setCi(element.ci)
                             setCellphone(element.cellphone)
                             setdDirection(element.direction)
+                            setUrl(element.photoURL)
                         }
                     }
                   //  setListData (arrayData)
