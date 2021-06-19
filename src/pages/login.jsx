@@ -11,9 +11,6 @@ const Login = (props) => {
     const [esRegistro, setEsRegistro] = React.useState(false)
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
-        type: "SMTP",
-        Host: "smtp.gmail.com",
-        secure: true,
         auth: {
           user: 'rympasantias@gmail.com',
           pass: 'Software12'

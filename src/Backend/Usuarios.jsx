@@ -1,10 +1,16 @@
-import { withRouter } from "react-router-dom";
-const Usuarios = () => {
-    return (
+import { useEffect } from 'react'
+import Panel from './Panel';
+const Usuarios =  ({ setNavbar }) => {
+    useEffect(() => {
+        setNavbar(true);
+      }, [setNavbar]);
+      return (
         <div>
-            
+           <Panel></Panel>
+
         </div>
+        
     )
 }
 
-export default withRouter(Usuarios)
+export default Usuarios
