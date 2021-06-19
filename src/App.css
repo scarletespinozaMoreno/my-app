@@ -560,4 +560,36 @@ box-shadow: inset 0 -1px 0 #ddd;
   background-color: #000000b0;
   color: white;
 }
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.nav-flush .nav-link {
+  border-radius: 0;
+}
+#activo{
+  background-color:#7f99c0;
+  font-family: 'Nunito', sans-serif;
+}
+#slidebar{
+  background-color:  #38589b!important;
+}
+.bi {
+  vertical-align: -.125em;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+#btnHome{
+  color:#ffffff!important;
+ 
+}
+
+
 /* end of about login */

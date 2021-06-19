@@ -12,14 +12,17 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Footer from './components/Footer';
+import Panel from './Backend/Panel';
 import Contact from './pages/Contact';
 import Booknow from './pages/Booknow';
 import Login from './pages/login';
 import Reset from './components/Reset';
 import {auth } from './firebase'
-function App() {
-  const [firebaseUser, setFirebaseUser] = React.useState(false)
 
+function App(_props) {
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
+  var [isNavbarHidden, setIsNavbarHidden] = React.useState(false);
+ 
   React.useEffect(() => {
       auth.onAuthStateChanged(user => {
           console.log(user)
@@ -33,16 +36,18 @@ function App() {
   return firebaseUser !== false ?(
     <div className="App">
       <BrowserRouter>
-        <Navbar firebaseUser={firebaseUser}/>
+      {isNavbarHidden ? null : <Navbar firebaseUser={firebaseUser} />}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Nosotros" component={About} />
+          <Route exact path="/Panel"  render={() => <Panel  setNavbar={setIsNavbarHidden}  />} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>
           <Route exact path="/Reservas/" component={Reservas}/>
           <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
+          
           <Route exact path="/rooms/:slug" component={SingleRoom} />
           <Route exact path="/booknow/:slug" component={Booknow} />
           
