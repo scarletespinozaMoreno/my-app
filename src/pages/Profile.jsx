@@ -8,7 +8,7 @@ const Profile = (props) => {
     var usuario = auth.currentUser;
     const data = db.collection('usuarios');
  
- //   const [listData, setListData] = React.useState([]   )
+ 
     const [user , setUser] = React.useState(null)
     const [nombreUsuario, setNombreUsuario] = React.useState("")
     const [ci, setCi] = React.useState("")

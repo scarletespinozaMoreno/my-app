@@ -1,4 +1,3 @@
-import React from 'react'
 import Panel from './Panel';
 import { useEffect } from 'react'
 const Alimentos = ({ setNavbar }) => {

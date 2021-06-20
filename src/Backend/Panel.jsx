@@ -1,8 +1,8 @@
 import React from 'react'
 const Panel = () => {
     return (
-        <main>
-        <div id="slidebar" className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" width="280px">
+    
+        <div id="slidebar" className="d-flex  vh-100 flex-column flex-shrink-0 p-3 text-white bg-dark" width="280px">
                 <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 
                 <span className="fs-4">Hostería Ríos y Montañas Admin</span>
@@ -70,7 +70,7 @@ const Panel = () => {
                     </ul>
                 </div>
             </div>
-        </main>
+        
     )
 }
 
