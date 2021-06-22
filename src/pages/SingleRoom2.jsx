@@ -13,23 +13,24 @@ export const habitacionContext=React.createContext()
 // {  categoria,descripcion,existencia,imagen,nombre,precio}
 
 
-const SingleRoom2=(habitacion)=>{
-    const [activarCard, setActivarCard] = React.useState(true)
-    const [aactivarCard2, setActivarCard2] = React.useState(true)
+const SingleRoom2=(habitacion )=>{
+    
+    //investigar el useparams, realizar copia de habitaciones temporales, comparar con la seleccionada y jalar los datos de mi arreglo global
+   // console.log("mi id actual :C",useParams())
+  //  const{categoria}=useParams()
+
+
+//    const [activarCard, setActivarCard] = React.useState(true)
+  //  const [aactivarCard2, setActivarCard2] = React.useState(true)
     const{room}=React.useContext(RoomContext)
   //  console.log("MI VARIABLE GLOBAL FINAL ",room.categoria,room.nombre )
-  console.log("Tamaño de string ",room.categoria.length )
-    if(room.categoria.length === 0){
-
-        setActivarCard(true)
-    }
-
-
+  console.log("Tamaño de string ",room.categoria.length)
+  
 //console.log("MI VARIABLE GLOBAL FINAL ",room )
     return(
         <>
         
-        <StyledHero img={room.imagen }>
+       <StyledHero img={room.imagen }>
        
        <Banner title={`${room.categoria}`}>
                <Link to="/rooms" className="btn btn-primary">Volver a habitaciones</Link>

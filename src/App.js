@@ -13,7 +13,7 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
-import Booknow from './pages/Booknow';
+import Booknow2 from './pages/Booknow2';
 import Login from './pages/login';
 import Reset from './components/Reset';
 import {auth } from './firebase'
@@ -49,12 +49,15 @@ function App(props) {
           <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
      
-        <Route exact path="/rooms/:categoria">
+          <Route exact path="/rooms/:categoria">
             <SingleRoom2/>
           </Route>
-          </RoomProvider> 
-          <Route exact path="/booknow/:slug" component={Booknow} />
+          <Route exact path="/booknow/:slug">
+            <Booknow2/>
+          </Route>   
           
+          
+          </RoomProvider> 
           <Route component={Error}/>
         </Switch>
         <Footer/>
