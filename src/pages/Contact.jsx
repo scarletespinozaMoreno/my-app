@@ -49,7 +49,7 @@ return (
                 <div className="row">
                     <div className="col-md-7 col-12 mx-auto">
                         <div className="card shadow-lg border-0 p-4">
-                            <h1 className="text-center bg-dark text-white display-4 d-inline-block">Contáctanos</h1>
+                            <h1 id="contactH1" className="text-center text-white display-4 d-inline-block">Contáctanos</h1>
                             <form onSubmit={submitForm} className="form-group my-5 text-center">
                                 
                                 
@@ -96,7 +96,7 @@ return (
                                     
                                     <button 
                                     type="submit"
-                                   
+                                    id="botonEnviarContactanos"
                                     className="btn btn-outline-dark btn-lg btn-block">Enviar</button>
                                 </div>
                             </form>
