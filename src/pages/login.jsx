@@ -3,12 +3,34 @@ import {auth, db} from '../firebase'
 import {withRouter} from 'react-router-dom'
 
 const Login = (props) => {
+    var nodemailer = require('nodemailer');
+
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
-
     const [esRegistro, setEsRegistro] = React.useState(false)
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: 'rympasantias@gmail.com',
+          pass: 'Software12'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'rympasantias@gmail.com',
+        to: 'scarletesponoz612@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+      };
 
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
     const procesarDatos = e => {
         e.preventDefault()
         if(!email.trim() || !pass.trim()){
@@ -33,6 +55,7 @@ const Login = (props) => {
             registrar()
         }else{
             login()
+           
         }
 
     }
@@ -61,6 +84,8 @@ const Login = (props) => {
                 setError('Contraseña incorrecta')
                 setEmail('')
                 setPass('')
+                
+                
             }
         }
     }, [email, pass, props.history])
@@ -150,9 +175,8 @@ const Login = (props) => {
                                         {esRegistro ? 'Registrar' : 'Acceder'}
                                     </button> 
                                     </div>
-                                    <div className="mt-3"><button type="button"
-                                        className="btn w-100"
-                                        type="button"
+                                    <div className=" btn w-100 mt-3"><button type="button"
+
                                         id="noCuentaBtn"
                                         onClick={() => setEsRegistro(!esRegistro)}
                                     >
@@ -163,7 +187,7 @@ const Login = (props) => {
                                         !esRegistro ? (
                                             <button 
                                             type="button" className="btn btn-outline align-self-end w-100 mt-2"
-                                                type="button"
+                                                
                                                 onClick={() => props.history.push('/Reset')}
                                             >
                                                <strong> Recuperar contraseña</strong>

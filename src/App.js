@@ -12,17 +12,22 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Footer from './components/Footer';
+import Dashboard from './Backend/Dashboard';
+import Habitaciones from './Backend/Habitaciones';
+import Promociones from './Backend/Promociones';
+import Usuarios from './Backend/Usuarios';
+import Alimentos from './Backend/Alimentos';
 import Contact from './pages/Contact';
 import Booknow from './pages/Booknow';
 import Login from './pages/login';
 import Reset from './components/Reset';
 import {auth } from './firebase'
-
 import RoomProvider from './context/RoomProvider'
 
-function App() {
+function App(props) {
   const [firebaseUser, setFirebaseUser] = React.useState(false)
-
+  var [isNavbarHidden, setIsNavbarHidden] = React.useState(false);
+ 
   React.useEffect(() => {
       auth.onAuthStateChanged(user => {
           console.log(user)
@@ -36,10 +41,15 @@ function App() {
   return firebaseUser !== false ?(
     <div className="App">
       <BrowserRouter>
-        <Navbar firebaseUser={firebaseUser}/>
+      {isNavbarHidden ? null : <Navbar firebaseUser={firebaseUser} />}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Nosotros" component={About} />
+          <Route exact path="/Dashboard"  render={() => <Dashboard setNavbar={setIsNavbarHidden}  />} />
+          <Route exact path="/Habitaciones"  render={() => <Habitaciones  setNavbar={setIsNavbarHidden}  />} />
+          <Route exact path="/Promociones"  render={() => <Promociones  setNavbar={setIsNavbarHidden}  />} />
+          <Route exact path="/Usuarios"  render={() => <Usuarios  setNavbar={setIsNavbarHidden}  />} />
+          <Route exact path="/Alimentos"  render={() => <Alimentos setNavbar={setIsNavbarHidden}  />} />
           <Route exact path="/contact" component={Contact} />
           <RoomProvider>
           <Route exact path="/rooms/" component={Rooms}/>
