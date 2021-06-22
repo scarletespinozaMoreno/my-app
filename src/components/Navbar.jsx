@@ -31,8 +31,8 @@ const Navbar = (props) => {
                     <ul className="navbar-nav  mr-auto">
                             <NavLink className="nav-link"  exact to="/">Inicio</NavLink>
                             <NavLink className="nav-link"  exact to="/rooms">Habitaciones</NavLink>
-                            <NavLink className="nav-link"  exact to="/Nosotros">Nosotros</NavLink>
                             <NavLink className="nav-link"  exact to="/Actividades">Actividades</NavLink>
+                            <NavLink className="nav-link"  exact to="/Nosotros">Nosotros</NavLink>
                             <NavLink className="nav-link"  exact to="/Contact">Contáctanos</NavLink>
                             
                     </ul>
