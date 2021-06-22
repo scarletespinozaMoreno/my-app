@@ -5,16 +5,8 @@ export const habitacionContext=React.createContext()
 
  
 const RoomDisplay = ({habitacion}) => {
-    const{room}=React.useContext(RoomContext)
-    const [rooms,getRoom]=React.useState({
-        categoria:'',
-        descripcion:'',
-        existencia:'',
-        imagen:'',
-        nombre:'',
-        precio:'',
-        
-    })
+    const{room,cambioRoom}=React.useContext(RoomContext)
+     
     const {  categoria,descripcion,existencia,imagen,nombre,precio} = habitacion 
  //   console.log("habitacion de display room",habitacion)
 //to={`/rooms/${categoria}`} 
@@ -25,6 +17,8 @@ const cargarDatos = () => {
         room.imagen=imagen
         room.nombre=nombre
         room.precio=precio
+        cambioRoom(room)
+
     console.log("VARIABLE GLOBALES",room)
     }
     return( 
@@ -36,7 +30,7 @@ const cargarDatos = () => {
                     className="img-fluid" 
                     style={{ maxWidth: '425px',
                             height: '250px'
-                 }}/>
+                     }}/>
                     
                     <div className="price-top">
                         <h5>$ {precio}</h5>
