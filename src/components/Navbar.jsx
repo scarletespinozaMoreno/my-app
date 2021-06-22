@@ -33,6 +33,7 @@ const Navbar = (props) => {
                             <NavLink className="nav-link"  exact to="/rooms">Habitaciones</NavLink>
                             <NavLink className="nav-link"  exact to="/Nosotros">Nosotros</NavLink>
                             <NavLink className="nav-link"  exact to="/Contact">Contáctanos</NavLink>
+                            <NavLink className="nav-link"  exact to="/Actividades">Actividades</NavLink>
                     </ul>
                 </div>
 
