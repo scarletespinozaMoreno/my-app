@@ -3,34 +3,13 @@ import {auth, db} from '../firebase'
 import {withRouter} from 'react-router-dom'
 
 const Login = (props) => {
-    var nodemailer = require('nodemailer');
-
+    
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
     const [esRegistro, setEsRegistro] = React.useState(false)
-    var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: 'rympasantias@gmail.com',
-          pass: 'Software12'
-        }
-      });
-      
-      var mailOptions = {
-        from: 'rympasantias@gmail.com',
-        to: 'scarletesponoz612@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
-      };
+    
 
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
     const procesarDatos = e => {
         e.preventDefault()
         if(!email.trim() || !pass.trim()){
