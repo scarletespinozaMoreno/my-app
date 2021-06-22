@@ -26,10 +26,13 @@ const Actividades = () => {
     const Card = (props) => (
         <div className="card h-100">
             <img src={props.data.Imagen} className="card-img-top" alt="..."></img>
-            <h5 className="card-header">{props.data.title}</h5>
+            <h2 className="card-header">{props.data.Titulo}</h2>
             <div className="card-body">
-                <h5 className="card-title">{props.data.Titulo}</h5>
-                <p className="card-text">{props.data.Descripcion}</p>
+                <p className="card-text">Descripción: {props.data.Descripcion}</p>
+                <p className="card-text">Duración: {props.data.Duracion}</p>
+                <p className="card-text">Hora: {props.data.Hora}</p>
+                <p className="card-text">Capacidad permitida: solo {props.data.Capacidad}</p>
+                <p className="card-text">Forma de registro: Reservación al 0959858891</p>
             </div>
         </div >
     )
