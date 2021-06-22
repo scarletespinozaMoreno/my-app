@@ -5,14 +5,14 @@ import 'firebase/storage'
 
 
 const firebaseConfig={
-    apiKey: "AIzaSyA9jSfCg4swRBK_E0r04k2sjiOImPNdtaw",
-    authDomain: "fir-web-eec50.firebaseapp.com",
-    databaseURL: "https://fir-web-eec50-default-rtdb.firebaseio.com",
-    projectId: "fir-web-eec50",
-    storageBucket: "fir-web-eec50.appspot.com",
-    messagingSenderId: "490536593367",
-    appId: "1:490536593367:web:d8bfb4e97562ca1aa58d92",
-    measurementId: "G-WG5HFTYRS4"
+    apiKey: "AIzaSyAdUEfnAG4sMYl5bN-iYwWRW7M07fBf2hk",
+    authDomain: "hosteria-95a60.firebaseapp.com",
+    databaseURL: "https://hosteria-95a60-default-rtdb.firebaseio.com",
+    projectId: "hosteria-95a60",
+    storageBucket: "hosteria-95a60.appspot.com",
+    messagingSenderId: "542004704893",
+    appId: "1:542004704893:web:e58870315ae52c054c6314",
+    measurementId: "G-80DEZ5YFN2"
 }
 //inicializar
 app.initializeApp(firebaseConfig);

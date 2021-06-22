@@ -16,7 +16,7 @@ export default class Services extends Component {
             {
                 icon:<IoFastFoodSharp/>,
                 title: "Alimentación",
-                info: "Disfrutarás de la verdadera comida ecuatoriana"
+                info: "Disfrutarás de la verdadera comida con sazón ecuatoriana"
             },
             {
                 icon:<GiHorseHead/>,
@@ -26,7 +26,7 @@ export default class Services extends Component {
             {
                 icon:<MdPool/>,
                 title: "Piscinas",
-                info: "Toma un descanso y relájate en nuestras piscinas."
+                info: "Toma un descanso, relájate  y diviertete en nuestras piscinas."
             },
 
         ]

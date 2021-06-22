@@ -5,8 +5,8 @@ import 'bootstrap/dist/js/bootstrap.min';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
-import Reservas from './pages/Reservas';
-import SingleRoom from './pages/SingleRoom';
+ 
+import SingleRoom2 from './pages/SingleRoom2';
 import Error from './pages/Error';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -17,6 +17,9 @@ import Booknow from './pages/Booknow';
 import Login from './pages/login';
 import Reset from './components/Reset';
 import {auth } from './firebase'
+
+import RoomProvider from './context/RoomProvider'
+
 function App() {
   const [firebaseUser, setFirebaseUser] = React.useState(false)
 
@@ -38,12 +41,17 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/Nosotros" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <RoomProvider>
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>
-          <Route exact path="/Reservas/" component={Reservas}/>
+ 
           <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
-          <Route exact path="/rooms/:slug" component={SingleRoom} />
+     
+        <Route exact path="/rooms/:categoria">
+            <SingleRoom2/>
+          </Route>
+          </RoomProvider> 
           <Route exact path="/booknow/:slug" component={Booknow} />
           
           <Route component={Error}/>

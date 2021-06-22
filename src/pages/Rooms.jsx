@@ -13,6 +13,7 @@ const Rooms = () => {
                     Volver al Inicio
                 </Link>
         </Banner>
+         
         <RoomsContainer/>
     </div>
     )

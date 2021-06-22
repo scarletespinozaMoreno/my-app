@@ -54,11 +54,11 @@ export default class Booknow extends Component {
         const {name,capacity,size,price,breakfast,pets,images} = room;
         const [mainImg, ...defaultBcg] = images;
         return (
-        <div className="container my-5">
-            <div className="row">
-                <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4">
+        <div className="container my-5 mt-10">
+            <div className="row  mt-10">
+                <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-10">
                     <div>
-                        <h1 className="display-4">Booking</h1>
+                        <h1 className="display-4  mt-10">Booking</h1>
                     </div>
                     <div className="row">
                         <div className="col-md-6 col-12 my-auto">
@@ -130,7 +130,9 @@ export default class Booknow extends Component {
                         </div>
                         <div className="col-md-6 col-12 my-auto">
                             <div className="col-md-6 col-12 float-right">
-                                <button className="btn btn-block btn-outline-primary" data-toggle="modal" data-target="#thanks">Confirm Booking</button>
+                                <button className="btn btn-block btn-outline-primary" data-toggle="modal" data-target="#thanks"
+                                
+                                >Confirm Booking</button>
                             </div>
                         </div>
                     </div>

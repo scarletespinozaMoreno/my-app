@@ -1,17 +1,19 @@
-import React, { Component } from 'react'
+    import React, { component } from 'react'
 import defaultBcg from '../images/room-3.jpeg';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from '../context';
 import StyledHero from '../components/StyledHero';
 
-export default class SingleRoom extends Component {
+export default class SingleRoom extends component {
     constructor (props){
+        
         super(props);
         this.state = {
             slug: this.props.match.params.slug,
             defaultBcg
         };
+     
     }
     static contextType = RoomContext;
     render() {

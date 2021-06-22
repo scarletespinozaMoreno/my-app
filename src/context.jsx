@@ -1,7 +1,23 @@
 import React, { Component } from 'react'
 import items from './data';
+import {db} from '../src/firebase'
 const RoomContext = React.createContext();
+const data = db.collection('habitaciones2')
 
+
+
+//onsole.log("ITEMS actualizados ", listData[0] ) 
+function  obtenerDatos (){
+    const snapshot =data.get();
+    const arrayData=snapshot.docs.map((doc) => (
+        {
+        ...doc.data()
+    }))
+   
+    //listData.push(arrayData)
+
+  return arrayData
+}    
 
 export default class RoomProvider extends Component {
     state={

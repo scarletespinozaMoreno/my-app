@@ -56,11 +56,7 @@ export default function RoomsFilter({rooms}) {
                         <input type="checkbox" className="custom-control-input" name="pets" id="pets" checked={pets} onChange={handleChange} />
                         <label htmlFor="pets" className="custom-control-label">Mascotas</label>
                     </div>
-                    <div className="input-group my-5">
-                        <label htmlFor="size" className="mr-3">Tamaño </label>
-                        <input type="number" name="minSize" id="size" value={minSize} onChange={handleChange} className="form-control" />
-                        <input type="number" name="maxSize" id="size" value={maxSize} onChange={handleChange} className="form-control" />
-                    </div>
+          
                 </div>
             </div>
         </div>

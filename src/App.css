@@ -9,6 +9,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+ 
+
 :root {
   --primaryColor: #38589b;
   --mainWhite: #fff;
@@ -322,7 +324,12 @@ box-shadow: inset 0 -1px 0 #ddd;
 .featured-rooms {
   padding: 5rem 0;
 }
-
+.imgagen {
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-size: cover;
+}
 /* end pf featured rooms */
 /* room */
 .room {
@@ -361,6 +368,7 @@ box-shadow: inset 0 -1px 0 #ddd;
 }
 .room-link {
   position: absolute;
+
   bottom: 0;
   right: 0;
   opacity: 0;

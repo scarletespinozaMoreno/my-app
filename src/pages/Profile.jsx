@@ -10,6 +10,7 @@ const Profile = (props) => {
  
  //   const [listData, setListData] = React.useState([]   )
     const [user , setUser] = React.useState(null)
+    console.log("usuario",user)
     const [nombreUsuario, setNombreUsuario] = React.useState("")
     const [ci, setCi] = React.useState("")
     const [cellphone, setCellphone] = React.useState("")
@@ -31,7 +32,7 @@ const Profile = (props) => {
 
           })
           setEmail(usuario.email);
-          console.log(user)
+          //console.log(user)
 
     }
     const selectFile = imagen => {
@@ -99,7 +100,7 @@ const Profile = (props) => {
             props.history.push('/login')
         }
  
-    }, [ data,usuario.uid,props.history])
+    }, [])
       
    
 

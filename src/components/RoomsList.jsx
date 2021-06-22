@@ -1,6 +1,9 @@
 import React from 'react'
 import Room from './Rooms';
 import notFound from '../images/notfound.svg'
+
+
+
 export default function RoomsList({rooms}) {
     if(rooms.length === 0){
        return (
@@ -8,11 +11,11 @@ export default function RoomsList({rooms}) {
                 <div className="card shadow-lg border-0 p-4">
                     <div className="row">
                         <div className="col-md-6 col-12 my-auto">
-                            <img src={notFound}  alt="not found" className="img-fluid"/>
+                            <img src="https://onlinezebra.com/wp-content/uploads/2019/01/error-404-not-found.jpg"  alt="not found" className="img-fluid"/>
                         </div>
                         <div className="col-md-6 col-12 mx-auto">
                             <div className="empty-search">
-                                <h3 className="display-4">Unfortunately no rooms matched your search parameters</h3>
+                                <h3 className="display-4">Lo sentimos, desafortunadamente no hay ocurrencias en su busqueda.</h3>
                             </div>
                         </div>
                     </div>
