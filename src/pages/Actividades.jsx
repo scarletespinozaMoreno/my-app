@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {getActividades} from '../Data/ActividadData';
+import Banner from '../components/Banner';
+import { Link } from 'react-router-dom';
+import Hero from '../components/Hero'
 const Actividades = () => {
 
     const [actividades, setActividades] = useState([]);
@@ -38,8 +41,15 @@ const Actividades = () => {
     )
 
  return(
-        
-            <div className=" mt-5 mb-5 p-5">
+    <div>
+        <Hero hero="actividadesHero">
+        </Hero>
+        <Banner title="Actividades disponibles" subtitle="Disfruta de nuevas experiencias">
+                <Link to="/" className="btn btn-warning">
+                    Volver al Inicio
+                </Link>
+        </Banner>
+        <div className=" mt-5 mb-5 p-5">
                 <h1 className= "mt-5">Actividades</h1>
                 <div className="row row-cols-1 row-cols-md-3 mt-5">
                         <div className="col mb-4">  
@@ -53,9 +63,9 @@ const Actividades = () => {
                                 
                         </div>
                 </div>
-            </div>
+        </div>
            
-        
+    </div>
     )
     
 }

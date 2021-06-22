@@ -202,6 +202,10 @@ box-shadow: inset 0 -1px 0 #ddd;
   background-image: url("./images/error.jpg");
   min-height: calc(100vh - 0px);
 }
+.actividadesHero{
+  background-image: url("./images/BannerActividades.jpg");
+  min-height: calc(100vh - 0px);
+}
 .lost{
   font-size: 44px;
   color: yellow;
