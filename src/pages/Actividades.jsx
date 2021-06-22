@@ -7,13 +7,7 @@ import Title from '../components/Title';
 const Actividades = () => {
 
     const [actividades, setActividades] = useState([]);
-    const [Imagen, setImagen] = useState('');
-    const [Descripcion, setDescripcion] = useState('');
-    const [fechaInicio, setfechaInicio] = useState('');
-    const [Duracion, setDuracion] = useState('');
-    const [Hora, setHora] = useState('');
-    const [Capacidad, setCapacidad] = useState('');
-    const [Titulo, setTitulo] = useState('');
+     
 
     const getlist = async () => { 
         try {

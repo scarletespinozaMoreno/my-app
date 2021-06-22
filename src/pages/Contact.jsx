@@ -9,7 +9,7 @@ const [apellido,setApellido]=React.useState('')
 const [email,setEmail]=React.useState('')
 const [mensaje,setMensaje]=React.useState('')
 const [telefono,setTelefono]=React.useState('')
-//const notify=()=>{ }
+
 
 
 const submitForm=async(e)=>{
