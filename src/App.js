@@ -19,6 +19,7 @@ import Reset from './components/Reset';
 import {auth } from './firebase'
 import RoomProvider from './context/RoomProvider'
 import Actividades from './pages/Actividades';
+import Promociones from './pages/Promociones';
 function App(props) {
   const [firebaseUser, setFirebaseUser] = React.useState(false)
   React.useEffect(() => {
@@ -40,6 +41,7 @@ function App(props) {
           <Route exact path="/Nosotros" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/Actividades" component={Actividades} />
+          <Route exact path="/Promociones" component={Promociones} />
           <RoomProvider>
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>

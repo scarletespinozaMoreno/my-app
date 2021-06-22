@@ -43,7 +43,8 @@ const Navbar = (props) => {
                     
                             {
                         props.firebaseUser !== null ? (
-                            <ul className="navbar-nav ml-auto "  >   
+                            <ul className="navbar-nav ml-auto "  >
+                                <NavLink className="nav-link" exact to="/Promociones">Promociones</NavLink>
                                 <NavLink className="nav-link" exact to="/Reservas/">Mis Reservas</NavLink>
                                 <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
                                 <button className="btn btn-outline-light" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
