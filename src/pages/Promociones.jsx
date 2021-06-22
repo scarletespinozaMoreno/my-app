@@ -12,6 +12,11 @@ const Promociones = () => {
                             Volver al Inicio
                         </Link>
                 </Banner>
+                <div className=" mb-5 p-5">
+                    <Title title="Promociones Disponibles" />
+
+                </div>
+               
         </div>
     )
 }
