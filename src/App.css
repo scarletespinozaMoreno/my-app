@@ -616,5 +616,24 @@ main {
   color:#ffffff!important;
 }
 
+#cardPromocionHeader {
+  background-color:  #38589b!important;
+  color:#ffffff!important;
+}
+#cardPromocionFooter{
+  background-color:  #38589b!important;
+  color:#ffffff!important;
+}
 
+#btnDetalle { 
+  background-color:#3a629c;
+  color:white;
+ 
+
+}
+
+#btnDetalle:hover {
+  background-color: #bec8d6e3;
+  color: rgb(0, 0, 0);
+}
 /* end of about login */
