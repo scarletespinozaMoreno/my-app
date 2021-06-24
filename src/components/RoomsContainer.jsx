@@ -5,6 +5,9 @@ import { withRoomConsumer } from '../context';
 import Loading from './Loading';
       // <RoomsList rooms = {sortedRooms}/>
 import RoomFinal from '../pages/RoomFinal'
+
+//<RoomsFilter rooms={rooms}/>
+
 function RoomsContainer({context}){
     const{loading,sortedRooms,rooms} = context;
     if(loading)
@@ -13,7 +16,7 @@ function RoomsContainer({context}){
     }
     return(
         <>
-            <RoomsFilter rooms={rooms}/>
+            
            
             <RoomFinal/>
         </>

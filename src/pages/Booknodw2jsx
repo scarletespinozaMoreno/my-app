@@ -1,80 +1,77 @@
-import React, { Component } from 'react'
+import React from 'react'
  
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {RoomContext} from '../context/RoomProvider';
-import {db} from '../firebase';
+import {RoomContext} from '../context/RoomProvider'
 export const habitacionContext=React.createContext()
-
-
-export default class Booknow extends Component {
-    constructor (props){
-        super(props);
-        this.state = {
-            nombre: " ",
-            precio: 0,
-            total: 0,
-            diasFuera: 0,
-            id:"",
-      
-            startDate: null,
-            endDate: null,
-    };
-    
-    this.handleChangeEnd = this.handleChangeEnd.bind(this);
-    this.handleChangeStart = this.handleChangeStart.bind(this);
-    }
  
-    
-    handleChangeStart(date) {
-        this.setState({
-        startDate: date
-        });
-    }
-    handleChangeEnd(date) {
-        this.setState({
-        endDate: date
-        });
-    }
-    savedata(){
-      
-        const data =   db.collection('reserva').doc(this.state.nombre).set(this.state);
+
+
+
+const Booknow2 =( )=>{    
+    const{room,cambioRoom}=React.useContext(RoomContext)
+
+
+    const [checkInDate, setCheckInDate] =React.useState(null);
+    const [checkOutDate, setCheckOutDate] =React.useState(null);
+    const [total,setTotal]=React.useState();
+
+    const [dias,setDias]= React.useState(1);
+ 
+
+   
+
+      const timeCalc = (checkInDate, checkOutDate) => {
+        try {
+        if(checkInDate===null || checkOutDate===null){
+            return 0
+        }
+        const start = moment(checkInDate)
+        const end = moment(checkOutDate)
+        const days=end.diff(start, "days", true)
         
-
-    }
-    mostrardato(){
-        console.log("mi total",this.state )
-
-    }
-      calculateDaysLeft(startDate, endDate) {
-          if (!moment.isMoment(startDate)) startDate = moment(startDate);
-          if (!moment.isMoment(endDate)) endDate = moment(endDate);
-          return endDate.diff(startDate, "days");
+        return days
+      }catch(error) {
+        console.log(error)
       }
-  
-      static contextType = RoomContext;
+    }
+      
+    const updateThisData=( )=>{
+        
+        try {
      
-    render() {
-        
-        
-        const room =  this.context
-
-        const { startDate, endDate } = this.state;
-        
-        const daysLeft = this.calculateDaysLeft(startDate, endDate);
-        const total=daysLeft*room.room.precio
-        this.state.precio=room.room.precio
-        this.state.nombre=room.room.categoria
-        this.state.id=room.room.nombre
-        this.state.total=total
-        this.state.diasFuera=daysLeft
-        
-        return (
+             
+            setDias(timeCalc(checkInDate,checkOutDate))
+            setTotal(dias*room.precio)
+            console.log("CGGG",checkInDate)
+            console.log("ooouu",checkOutDate)
+            console.log("DIAS",dias)
+            console.log("TOTAL",total)
+        } catch (error) {
             
-            <div className="container col-md-10 col-6 mx-auto mt-5 p-5">
+        }
+
+    
+    }
+    
+    const reserveRoom=()=>{
+//crear un id que se agregue en una nueva colecion que diga reservas, dentro o fuera del usuario
+//si es dentro del usuario generar un mapa con las reservas y mostrar todas en el nav reservas 
+
+
+    }
+
+
+    return(
+      
+    
+       
+       
+    
+        <div className="container col-md-10 col-6 mx-auto mt-5 p-5">
             <div className="row  mt-10">
                 <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-10">
                     <div>
@@ -82,7 +79,7 @@ export default class Booknow extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-6 col-12 my-auto">
-                            <img src={room.room.imagen} className="img-fluid" alt="selected room" />
+                            <img src={room.imagen} className="img-fluid" alt="selected room" />
                         </div>
                         <div className="col-md-6 col-12 my-auto">
                             <h1>Detalles de habitación</h1>
@@ -90,7 +87,7 @@ export default class Booknow extends Component {
                                 <thead className="thead-light">
                                     <tr>
                                         <th>ID room</th>
-                                        <td>{room.room.nombre}</td>
+                                        <td>{room.nombre}</td>
                                     </tr>
                                     <tr>
                                         <th>Capacidad</th>
@@ -113,14 +110,13 @@ export default class Booknow extends Component {
                         <div className="col-md-6 col-12">
                             <div className="form-group">
                                 <label htmlFor="Fromdate" className="font-weight-bolder mr-3">Desde : </label>
-                                <DatePicker     
-                                    selected={this.state.startDate} 
-                                    onChange={this.handleChangeStart} 
-                                    className="form-control  " 
-                                    placeholderText="Fecha de inicio"
-                                    minDate={new Date()}
-                                    dateFormat="MMMM d, yyyy" />
-                                    
+                                <DatePicker
+                                selected={checkInDate}
+                                minDate={new Date()}
+                                onChange={date=>setCheckInDate(date)}
+                                className="form-control  " 
+                                placeholderText="Fecha de inicio"
+                                dateFormat="MMMM d, yyyy" />
                                 
                             </div>
                     
@@ -129,12 +125,16 @@ export default class Booknow extends Component {
                             <div className="form-group">
                                 <label htmlFor="Todate" className="font-weight-bolder mr-3">Hasta :    </label>
                                 <DatePicker 
-                                selected={this.state.endDate} 
-                                minDate={new Date()}
-                                onChange={this.handleChangeEnd} 
+                                selected={checkOutDate}
+                                minDate={checkInDate}
+                                onChange={date=>setCheckOutDate(date)}
+                              
+
+                                
                                 placeholderText="Fecha Fin"   
                                 className="form-control" 
                                 dateFormat="MMMM d, yyyy" />
+ 
 
  
 
@@ -142,18 +142,28 @@ export default class Booknow extends Component {
                         </div>
                     </div>
                    
-                  
+                    {checkInDate && checkOutDate && (
+                      
+                         
+                            <div className="summary">
+                            <p>
+                            <mark> Usted reserva la habitación desde {moment(checkInDate, 'YYYY-MM-DD').format("LL")} hasta{" "}
+                                {moment(checkOutDate, 'YYYY-MM-DD').format("LL")}. </mark>
+                                
+                            </p>
+                            </div>
+                            
+                        )}
                     <div className="row p-2">
                         <div className="col-md-6 col-12 my-4">
-                            <h6 className="font-weight-bolder">Días de reserva: {daysLeft}</h6>
+                            <h6 className="font-weight-bolder">Días de reserva: {timeCalc(checkInDate, checkOutDate)}</h6>
                             <mark>Por favor, asegurese de realizar su registro entre las 9 am y 12 pm</mark>
                             
                         </div>
-                    
                         <div className="col-md-6 col-12 my-4 ">
-                            <h6 className="font-weight-bold">Precio por día : <span className="text-primary">${room.room.precio}</span>  </h6>
+                            <h6 className="font-weight-bold">Precio por día : <span className="text-primary">${room.precio}</span>  </h6>
                            
-                            <h6 className="font-weight-bold">Total Price to be paid : <span className="text-primary">$ {total}</span></h6>
+                            <h6 className="font-weight-bold">Total Price to be paid : <span className="text-primary">${timeCalc(checkInDate, checkOutDate)*room.precio}</span></h6>
                         </div>
                     </div>
                     <div className="row my-3">
@@ -173,9 +183,9 @@ export default class Booknow extends Component {
                                 <button className="btn btn-block btn-outline-primary " 
                                 data-toggle="modal" 
                                 data-target="#thanks"
-                                onClick={()=>{
-                                    this.savedata();
-                                    this.mostrardato()}}
+                                onClick={() =>{
+                                    timeCalc(checkInDate,checkOutDate);
+                                    updateThisData();}}
                                 
                                 >Confirmar Registro</button>
                             </div>
@@ -200,6 +210,8 @@ export default class Booknow extends Component {
             </div>
         </div>
      
-    )
-    }
+    )  
+
+
 }
+export default   Booknow2
