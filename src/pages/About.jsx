@@ -109,6 +109,7 @@ function About() {
         <div className="team">
             <h1 className="display-4">Nuestro Equipo</h1>
         </div>
+       
         <div className="row mb-5">
             <div className="col-md-4 col-12 mx-auto my-2">
                 <div className="card border-0 shadow-lg p-4">

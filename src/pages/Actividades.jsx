@@ -20,7 +20,7 @@ const Actividades = () => {
     useEffect(() => {
         getlist();
     }, []);
-
+    
     const Card = (props) => (
         <div className="col mb-4"> 
             <div className="card shadow-lg h-100">
