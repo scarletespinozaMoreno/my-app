@@ -20,14 +20,22 @@ const Promociones = () => {
     useEffect(() => {
         getlist();
     }, []);
+
     const Card = (props) => (
         <div className="col mb-4"> 
-            <div className="card text-center">
-                <div id="cardPromocionHeader" className="card-header " width="100px"></div>
-                <div className="card-body">
-                    <h5 className="card-title">{props.data.Titulo}</h5>
-                    <p className="card-text">{props.data.Descripcion}</p>
-                    <a href="/" id="btnDetalle" className="btn ">Ver detalle</a>
+            <div className="card text-center shadow-lg h-100">
+                    <div id="cardPromocionHeader" className="card-header " width="100px">{props.data.Titulo}</div>
+                    <div class="row g-0 h-100">
+                        <div class="col-md-7">
+                            <div className="card-body">
+                                <p className="card-text mb-1">Fecha inicio: {props.data.f_inicial}</p>  
+                                <p className="card-text">Fecha fin: {props.data.f_final}</p> 
+                                <p className="card-text">Cantidad: {props.data.Cantidad} desuento</p>  
+                            </div>
+                        </div>
+                        <div className="col-md-5">
+                            <img src={props.data.Imagen}  className="card-img-top h-100 " alt="..."></img>
+                        </div>
                 </div>
                 <div id="cardPromocionFooter" className="card-footer ">Duracion: {props.data.Duracion}</div>
             </div>
@@ -44,7 +52,7 @@ const Promociones = () => {
                 </Banner>
                 <div className=" mb-5 p-5">
                     <Title title="Promociones Disponibles" />
-                    <div className="row row-cols-1 row-cols-md-2 mt-5">
+                    <div className="row row-cols-1 row-cols-md-3 mt-5">
                             <> 
                             {promociones.map((info, i) => (
                                  <Card data={info} key={i}></Card>

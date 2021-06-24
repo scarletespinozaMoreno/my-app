@@ -25,3 +25,13 @@ export const getPromociones = async () => {
         throw error;
     }
 }
+
+export const getPromocion = async (id) => {
+    try {
+        const promocion = await db.collection('Promociones').doc(id);
+        const data = await promocion.get();
+        return data.data();
+    } catch (error) {
+        throw error;
+    }
+}

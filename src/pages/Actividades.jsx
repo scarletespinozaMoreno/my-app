@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero'
 import Title from '../components/Title';
 const Actividades = () => {
-
+   
     const [actividades, setActividades] = useState([]);
      
 
@@ -33,6 +33,8 @@ const Actividades = () => {
                     <p className="card-text">Capacidad permitida: solo {props.data.Capacidad}</p>
                     <p className="card-text">Forma de registro: Reservación al 0959858891</p>
                 </div>
+                
+                
             </div >
         </div>
     )
