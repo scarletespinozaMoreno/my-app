@@ -170,14 +170,14 @@ export default class Booknow extends Component {
                         </div>
                         <div className="col-md-6 col-12 my-4 ">
                             <div className="col-md-6 col-12 float-right my-1 px-4">
-                                <button className="btn btn-block btn-outline-primary " 
+                                <Link to="/" className="btn btn-block btn-outline-primary " 
                                 data-toggle="modal" 
                                 data-target="#thanks"
                                 onClick={()=>{
                                     this.savedata();
                                     this.mostrardato()}}
                                 
-                                >Confirmar Registro</button>
+                                >Confirmar Registro</Link>
                             </div>
                           
                         </div>
