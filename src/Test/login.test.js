@@ -1,14 +1,13 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect' 
-import{render} from '@testing-library/react'
+import{render,screen} from '@testing-library/react'
 import Login from '../pages/login'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-
-test('Debe renderizaeset',() =>{
-     const{getByTestId}= render( <Login />)
-      const input=getByTestId("email")
-      const pass =getByTestId("password")
-
-      const inpurValue="scarletespinoza"
-      button.click()
+describe('Login Page',() =>{
+     it('must display a titlee',() =>{
+          render(<Router><Login / ></Router>) 
+          expect(screen.queryByText( /iniciar sesión/i)).toBeInTheDocument()
+      
+      })
 })
