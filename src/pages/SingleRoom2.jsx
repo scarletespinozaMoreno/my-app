@@ -77,7 +77,7 @@ const SingleRoom2=(habitacion )=>{
            <div className="p-4 clearfix">
                <div className="row">
                   <div className="col-md-3 col-12 ml-auto">
-                     <Link to={`/booknow/${room.categoria}`} className="btn btn-outline-primary btn-block btn-lg float-right ">Registrar</Link>
+                     <Link to={`/booknow/${room.categoria}`} className="btn btn-outline-primary btn-block btn-lg float-right  ">Registrar</Link>
                   </div>
                </div>
            </div>

@@ -10,13 +10,14 @@ const Profile = (props) => {
  
  
     const [user , setUser] = React.useState(null)
-    console.log("usuario",user)
+    
     const [nombreUsuario, setNombreUsuario] = React.useState("")
     const [ci, setCi] = React.useState("")
     const [cellphone, setCellphone] = React.useState("")
     const [email, setEmail] = React.useState(usuario.email)
     const [direction, setdDirection] = React.useState("")
     const [image, setImage]= React.useState()
+ 
     const [activarFormulario, setActivarFormulario] = React.useState(false)
     const [activarFormulario2, setActivarFormulario2] = React.useState(true)
     
@@ -35,13 +36,13 @@ const Profile = (props) => {
           //console.log(user)
 
     }
-    const selectFile = imagen => {
-        console.log(imagen.target.files[0])
+    const selectFile =( imagen) => {
+      //  console.log(imagen.target.files[0])
        if(imagen.target.files[0]){
         setImage(imagen.target.files[0])
        }
     }
-    console.log("IMAGEN URL ", url)
+    //console.log("IMAGEN URL ", url)
     const uploadFile = async (image) =>  {
          try {
             const imgref = await storage.ref().child(usuario.email).child("Imagen de perfil")
@@ -61,7 +62,7 @@ const Profile = (props) => {
          }
          
       }
-    console.log("imagen")
+      console.log("usuario",user)
 
       
     React.useEffect(() => {
@@ -75,11 +76,11 @@ const Profile = (props) => {
                         {
                         ...doc.data()
                     }))
-                    console.log("id del usuario actual",usuario.uid)
+                   // console.log("id del usuario actual",usuario.uid)
                     //console.log(usuario.uid,arrayData[0]["name"])  
                     for (let i = 0; i < arrayData.length; i++) {
                         const element = arrayData[i];
-                        console.log(element.uid)
+                       // console.log(element.uid)
                         if (element.uid === usuario.uid) {
                             setNombreUsuario(element.name)
                             setCi(element.ci)
@@ -96,7 +97,7 @@ const Profile = (props) => {
               obtenerDatos()
             setUser(auth.currentUser)
         }else{
-            console.log('no existe')
+            //console.log('no existe')
             props.history.push('/login')
         }
  
@@ -107,9 +108,6 @@ const Profile = (props) => {
 
     return (
         <div className="col-md-8 col-12 mx-auto mt-5 p-5 " >
-            
-
-            
             <div className="card shadow-lg border-0  mt-5 mb-5 text-center">
                     {
                     activarFormulario2 &&

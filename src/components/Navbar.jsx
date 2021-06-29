@@ -20,21 +20,32 @@ const Navbar = (props) => {
         }
     return (
     <>
-        <nav className="navbar navbar-expand-sm navbar-dark py-2 fixed-top">
-            <div className="container-fluid mb-3">
-                <span className="navbar-brand font-weight-bolder">Hostería Ríos y Montañas</span>
-                <a href="void(0)" className="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg navbar-dark py-2 fixed-top ">
+            <div className="container-fluid">
+                 
+                <a className="navbar-brand" href="#">Hostería Ríos y Montañas    </a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span>
                         <FaAlignRight className="nav-icon" /></span>
-                </a>
-                <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
-                    <ul className="navbar-nav  mr-auto">
-                            <NavLink className="nav-link"  exact to="/">Inicio</NavLink>
-                            <NavLink className="nav-link"  exact to="/rooms">Habitaciones</NavLink>
-                            <NavLink className="nav-link"  exact to="/Actividades">Actividades</NavLink>
-                            <NavLink className="nav-link"  exact to="/Nosotros">Nosotros</NavLink>
-                            <NavLink className="nav-link"  exact to="/Contact">Contáctanos</NavLink>
-                            
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <NavLink className="nav-link" activeClassName="active_class"  exact to="/">Inicio</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/rooms">Habitaciones</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/Actividades">Actividades</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/Nosotros">Nosotros</NavLink>
+                        </li>
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/Contact">Contáctanos</NavLink>
+                        </li>
                     </ul>
                 </div>
 
@@ -44,17 +55,27 @@ const Navbar = (props) => {
                             {
                         props.firebaseUser !== null ? (
                             <ul className="navbar-nav ml-auto "  >
-                                <NavLink className="nav-link" exact to="/Promociones">Promociones</NavLink>
-                                <NavLink className="nav-link" exact to="/Reservas/">Mis Reservas</NavLink>
-                                <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
-                                <button className="btn btn-outline-light" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
-                                
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" exact to="/Promociones">Promociones</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" exact to="/Reservas/">Mis Reservas</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
+                                </li>
+                                <li className="nav-item text-center">
+                                    <button className="btn btn-outline-light text-center" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
+                                </li>
                             </ul>
                         
                         
                         ): (
                             <ul className="navbar-nav ml-auto "  >
+                                 <li className="nav-item"> 
                                     <NavLink className="nav-link ml-auto" to="/Login">Login</NavLink>
+                                 </li>
+                                    
                             </ul>
                        
                         )
