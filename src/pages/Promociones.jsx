@@ -25,8 +25,8 @@ const Promociones = () => {
         <div className="col mb-4"> 
             <div className="card text-center shadow-lg h-100">
                     <div id="cardPromocionHeader" className="card-header " width="100px">{props.data.Titulo}</div>
-                    <div className="row g-0 h-100">
-                        <div className="col-md-7">
+                    <div class="row g-0 h-100">
+                        <div class="col-md-7">
                             <div className="card-body">
                                 <p className="card-text mb-1">Fecha inicio: {props.data.f_inicial}</p>  
                                 <p className="card-text">Fecha fin: {props.data.f_final}</p> 

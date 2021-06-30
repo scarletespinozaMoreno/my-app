@@ -22,7 +22,7 @@ const RoomFinal = () => {
             }
           }
           obtenerDatos()         
-    }, [ data ])
+    }, [  ])
 
     return (
         <section className="container " >

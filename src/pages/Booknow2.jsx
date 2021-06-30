@@ -39,9 +39,9 @@ export default class Booknow extends Component {
         endDate: date
         });
     }
-    savedata( ){
+    savedata(){
       
-        db.collection('reserva').doc(this.state.nombre).set(this.state);
+        const data =   db.collection('reserva').doc(this.state.nombre).set(this.state);
         
 
     }

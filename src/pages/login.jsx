@@ -132,8 +132,7 @@ const Login = (props) => {
                                     }
                                     
                                     <input 
-                                        type="email"
-                                        name="email" 
+                                        type="email" 
                                         className="form-control mb-2"
                                         placeholder="Ingrese Email"
                                         onChange={ e => setEmail(e.target.value) }
@@ -141,7 +140,6 @@ const Login = (props) => {
                                     />
                                     <input 
                                         type="password" 
-                                        name="password"
                                         className="form-control mb-2"
                                         placeholder="Ingrese Contraseña"
                                         onChange={ e => setPass(e.target.value) }
@@ -150,7 +148,6 @@ const Login = (props) => {
                                     <div className="mt-3">
                                     <button 
                                        className="btn w-100"
-                                       name="botonEnviar"
                                         type="submit"
                                         id="registrarBtn"
                                     >
