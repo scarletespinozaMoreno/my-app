@@ -82,10 +82,12 @@ const Login = (props) => {
                 direction: 'N/A',
                 cellphone:'N/A',
                 ci:'N/A',
+                reservasActuales:{},
                 fecha: Date.now()       
 
             })
-            //en el caso de crear coleciones para los usuarios indiviruales, pero se puede obviar para poenr una coleccion de habitaciones regitradas o en uso. dentro de cada user
+            //en el caso de crear coleciones para los usuarios indiviruales, 
+            //pero se puede obviar para poenr una coleccion de habitaciones regitradas o en uso. dentro de cada user
 
            // await db.collection(res.user.uid).add({
            //     name: 'EJEMPLO->A QUI SE AGREGAN LOS DATOS PARA EL USUARIO ACTUAL ',

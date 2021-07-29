@@ -8,7 +8,7 @@ const RoomDisplay = ({habitacion}) => {
     const{room,cambioRoom}=React.useContext(RoomContext)
      
     const {  categoria,descripcion,existencia,imagen,nombre,precio} = habitacion 
- //   console.log("habitacion de display room",habitacion)
+console.log("habitacion de display room",habitacion)
 //to={`/rooms/${categoria}`} 
 const cargarDatos = () => {
         room.categoria=categoria

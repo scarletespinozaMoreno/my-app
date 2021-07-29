@@ -3,7 +3,7 @@ import {db} from '../firebase'
 import RoomDisplay from '../components/RoomDisplay'
  
 
-const RoomFinal = () => {
+export default function  RoomFinal(){
     const data= db.collection('productos');
     const [habitaciones, setHabitaciones] = React.useState([])
     
@@ -21,24 +21,21 @@ const RoomFinal = () => {
               console.log(error)
             }
           }
+          console.log("ESTE ES EL MENU ")
           obtenerDatos()         
     }, [  ])
 
     return (
         <section className="container " >
             <div className="row my-5 ">
-                {habitaciones.map(habitacion => (
-                   
-                <RoomDisplay
+                {habitaciones.map(habitacion => {
+                    return <RoomDisplay
                     key={habitacion.id}
-                    habitacion={habitacion}
-                    
-                />
-                
-            ))}
+                    habitacion={habitacion}/>;               
+            })}
             </div>
         </section>
     )
 }
 
-export default RoomFinal;
+ 

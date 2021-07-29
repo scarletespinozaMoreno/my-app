@@ -6,11 +6,12 @@ import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {RoomContext} from '../context/RoomProvider';
-import {db} from '../firebase';
+import {auth,db} from '../firebase';
 export const habitacionContext=React.createContext()
 
 
 export default class Booknow extends Component {
+    
     constructor (props){
         super(props);
         this.state = {
@@ -40,11 +41,16 @@ export default class Booknow extends Component {
         });
     }
     savedata(){
-      
-        const data =   db.collection('reserva').doc(this.state.nombre).set(this.state);
-        
-
+       
+       
+       const id = auth.currentUser.email
+       const user =db.collection('usuarios').doc(id).collection("reservas").add(
+          this.state
+       )
+       console.log("INFO ACTUAL",user)
     }
+
+
     mostrardato(){
         console.log("mi total",this.state )
 
@@ -73,9 +79,8 @@ export default class Booknow extends Component {
         this.state.diasFuera=daysLeft
         
         return (
-            
-            <div className="container col-md-10 col-6 mx-auto mt-5 p-5">
-            <div className="row  mt-10">
+            <div className="container my-10 mt-5 p-5">
+            <div className="row mt-6 ">
                 <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-10">
                     <div>
                         <h1 className="display-4  mt-10">Registro</h1>
@@ -86,7 +91,7 @@ export default class Booknow extends Component {
                         </div>
                         <div className="col-md-6 col-12 my-auto">
                             <h1>Detalles de habitación</h1>
-                            <table className="table">
+                            <table className="table table-dark">
                                 <thead className="thead-light">
                                     <tr>
                                         <th>ID room</th>
@@ -153,7 +158,7 @@ export default class Booknow extends Component {
                         <div className="col-md-6 col-12 my-4 ">
                             <h6 className="font-weight-bold">Precio por día : <span className="text-primary">${room.room.precio}</span>  </h6>
                            
-                            <h6 className="font-weight-bold">Total Price to be paid : <span className="text-primary">$ {total}</span></h6>
+                            <h6 className="font-weight-bold">Total a pagar : <span className="text-primary">$ {total}</span></h6>
                         </div>
                     </div>
                     <div className="row my-3">
@@ -162,15 +167,15 @@ export default class Booknow extends Component {
                                 <label htmlFor="payment" className="font-weight-bolder mb-1">Opciones de pago</label>
                                 <select className="form-control">
                                     <option disabled>Seleccione método de pago </option>
-                                    <option value="Credit">Credito</option>
-                                    <option value="Debit">Debito</option>
+                                    <option value="Credit">Crédito</option>
+                                    <option value="Debit">Débito</option>
                                     <option value="checkin">Pagar en el checking</option>
                                 </select>
                             </div>
                         </div>
                         <div className="col-md-6 col-12 my-4 ">
                             <div className="col-md-6 col-12 float-right my-1 px-4">
-                                <Link to="/" className="btn btn-block btn-outline-primary " 
+                                <Link to="/" className="btn btn-block btn-outline-primary center " 
                                 data-toggle="modal" 
                                 data-target="#thanks"
                                 onClick={()=>{
