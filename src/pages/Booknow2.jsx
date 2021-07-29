@@ -91,7 +91,7 @@ export default class Booknow extends Component {
                         </div>
                         <div className="col-md-6 col-12 my-auto">
                             <h1>Detalles de habitación</h1>
-                            <table className="table table-dark">
+                            <table className="table ">
                                 <thead className="thead-light">
                                     <tr>
                                         <th>ID room</th>
