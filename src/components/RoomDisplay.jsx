@@ -6,20 +6,15 @@ export const habitacionContext=React.createContext()
  
 const RoomDisplay = ({habitacion}) => {
     const{room,cambioRoom}=React.useContext(RoomContext)
-     
     const {  categoria,descripcion,existencia,imagen,nombre,precio} = habitacion 
-console.log("habitacion de display room",habitacion)
-//to={`/rooms/${categoria}`} 
-const cargarDatos = () => {
-        room.categoria=categoria
-        room.descripcion=descripcion
-        room.existencia=existencia
-        room.imagen=imagen
-        room.nombre=nombre
-        room.precio=precio
-        cambioRoom(room)
-
-    console.log("VARIABLE GLOBALES",room)
+    const cargarDatos = () => {
+            room.categoria=categoria
+            room.descripcion=descripcion
+            room.existencia=existencia
+            room.imagen=imagen
+            room.nombre=nombre
+            room.precio=precio
+            cambioRoom(room)
     }
     return( 
         <div className="col-md-4  col-12 mx-auto p-2">

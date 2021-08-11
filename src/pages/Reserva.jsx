@@ -10,13 +10,13 @@ import ReservaDisplay from './ReservaDisplay';
 const Reserva = (props) => {
     var id = auth.currentUser.email;//mail para el id
     const [habitaciones, setHabitaciones] = React.useState([])
-    console.log("MI USUARIO ACTUAL",id)    
+    //console.log("MI USUARIO ACTUAL",id)    
     //llamar datos
     React.useEffect(() => {
         const obtenerDatos = async () => {
               try {
                 const snapshot = await db.collection('usuarios').doc(id).collection("reservas").where("existencia", "==", true).get()//datos con existncia igual true
-                console.log("data",snapshot)
+               // console.log("data",snapshot)
                 const arrayData=snapshot.docs.map((doc) => (
                     {
                     ...doc.data()

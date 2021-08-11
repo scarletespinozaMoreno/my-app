@@ -23,7 +23,7 @@ const Navbar = (props) => {
         <nav className="navbar navbar-expand-lg navbar-dark py-2 fixed-top ">
             <div className="container-fluid">
                  
-                <a className="navbar-brand" href="/">Hostería Ríos y Montañas    </a>
+                <h1 className="navbar-brand"  >Hostería Ríos y Montañas    </h1>
                 <button className="navbar-toggler" 
                     type="button" 
                      data-bs-toggle="collapse" 
