@@ -22,10 +22,8 @@ const cargarDatos = () => {
     console.log("VARIABLE GLOBALES",room)
     }
     return( 
-        
         <div className="col-md-4  col-12 mx-auto p-2">
             <div className="card shadow-lg border-0 room   "  >
-                 
                     <img src={imagen} alt="imagen habitacion"  alt="single room" 
                     className="img-fluid" 
                     style={{ maxWidth: '425px',
@@ -37,7 +35,7 @@ const cargarDatos = () => {
                         <p>por noche</p>
                     </div>
 
-                    <Link  to={`/rooms/${nombre}`} className="btn-warning room-link text-center"  onClick={() =>{
+                    <Link  to={`/rooms/${nombre}`} className="btn-warning   text-center"  onClick={() =>{
                                  
                                     cargarDatos();
                                    

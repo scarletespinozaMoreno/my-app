@@ -69,6 +69,7 @@ const Profile = (props) => {
     React.useEffect(() => {
     
             const obtenerDatos = async () => {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                   try {
                     const datos = await db.collection('usuarios').get();
                     const arrayData=datos.docs.map((doc) => (
@@ -96,7 +97,7 @@ const Profile = (props) => {
               }
               obtenerDatos()
  
-         
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
       
    

@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
- 
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-
-import DatePicker from "react-datepicker";
+import DatePicker, {registerLocale}from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import es from 'date-fns/locale/es'
 import {RoomContext} from '../context/RoomProvider';
 import {auth,db} from '../firebase';
+registerLocale("es",es)
 export const habitacionContext=React.createContext()
-
 
 export default class Booknow extends Component {
     
@@ -20,6 +19,7 @@ export default class Booknow extends Component {
             total: 0,
             diasFuera: 0,
             id:"",
+            imagen:"",
       
             startDate: null,
             endDate: null,
@@ -42,7 +42,8 @@ export default class Booknow extends Component {
     }
     savedata(){
        
-       
+        this.state.endDate=new Date(this.state.endDate)
+        this.state.startDate=new Date(this.state.startDate)
        const id = auth.currentUser.email
        const user =db.collection('usuarios').doc(id).collection("reservas").add(
           this.state
@@ -77,7 +78,7 @@ export default class Booknow extends Component {
         this.state.id=room.room.nombre
         this.state.total=total
         this.state.diasFuera=daysLeft
-        
+        this.state.imagen=room.room.imagen
         return (
             <div className="container my-10 mt-5 p-5">
             <div className="row mt-6 ">
@@ -119,6 +120,7 @@ export default class Booknow extends Component {
                             <div className="form-group">
                                 <label htmlFor="Fromdate" className="font-weight-bolder mr-3">Desde : </label>
                                 <DatePicker     
+                                    locale="es"
                                     selected={this.state.startDate} 
                                     onChange={this.handleChangeStart} 
                                     className="form-control  " 
@@ -134,6 +136,7 @@ export default class Booknow extends Component {
                             <div className="form-group">
                                 <label htmlFor="Todate" className="font-weight-bolder mr-3">Hasta :    </label>
                                 <DatePicker 
+                                locale="es"
                                 selected={this.state.endDate} 
                                 minDate={new Date()}
                                 onChange={this.handleChangeEnd} 
