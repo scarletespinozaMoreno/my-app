@@ -7,23 +7,18 @@ import Services from '../components/Services';
 //import FeaturedRooms from '../components/FeaturedRooms';
 //<FeaturedRooms/>
 export default function Home() {
-    
-    
-    
-
-    
     return (
         <>
-        <Hero hero="defaultHero">
-        </Hero>
-        <Banner title="Suites Familiares" subtitle="a partir  de $30">
+            <Hero hero="defaultHero"></Hero>    
+            <Banner>
+                <h1 className="mt-4 p-1 ">Hostería</h1>
+                <h1> Ríos Y Montañas</h1>
+                <p className="mt-4 mb-4">Suites Familiares a partir  de $100</p>
                 <Link to="/rooms" className="btn btn-primary">
-                      Nuestras habitaciones
+                    Nuestras habitaciones
                 </Link>
-        </Banner>
-        <Services/> 
-      
-       
+            </Banner>
+            <Services/> 
         </>
 
     )

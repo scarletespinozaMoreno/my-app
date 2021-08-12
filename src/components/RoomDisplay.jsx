@@ -31,13 +31,13 @@ const RoomDisplay = ({habitacion}) => {
                         <p>por noche</p>
                     </div>
 
-                    <Link  to={`/rooms/${nombre}`} className="btn-warning   text-center"  onClick={() =>{
+
+                    <Link  to={`/rooms/${nombre}`} className="btn-warning1 room-info   text-center"  onClick={() =>{
                                  
-                                    cargarDatos();
-                                   
-                                    
-                                }}>Características</Link>  
-                    <p className="room-info">{categoria}</p>
+                                 cargarDatos();
+                                
+                                 
+                             }}>{categoria}</Link> 
              
             </div>   
         </div>

@@ -12,7 +12,7 @@ body {
  
 
 :root {
-  --primaryColor: #38589b;
+  --primaryColor: #1b5f9e;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -79,14 +79,14 @@ h6 {
   text-transform: uppercase;
   cursor: pointer;
 }
-.btn-warning {
+.btn-warning1 {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   color: var(--mainBlack);
-  background: var(--primaryColor);
+  background: 	#BDBEC3;
   padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
+  border: 3px solid rgb(255, 255, 255)!important;
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -94,13 +94,13 @@ h6 {
 .btn-primary:hover{
   text-decoration: none;
   background: transparent!important;
-  color: #fff!important;
+  color: var(--primaryColor);
 }
-.btn-warning:hover{
+.btn-warning1:hover{
   text-decoration: none;
   background: transparent!important;
-  color: yellow!important;
-}
+  color: rgb(255, 255, 255)!important;
+} 
 .loading {
   text-transform: capitalize;
   text-align: center;
@@ -151,7 +151,7 @@ h6 {
   -o-transition: .5s linear;
 }
 .navbar {
-  background-color:  #3357a7!important;
+  background-color:  #1b5f9e;
   
 }
 

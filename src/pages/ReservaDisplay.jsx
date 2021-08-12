@@ -7,12 +7,15 @@ export const habitacionContext=React.createContext()
 const ReservaDisplay = ({habitacion}) => {
     const desde=  moment(habitacion.startDate.toDate()).format('LL')
     const hasta=  moment(habitacion.endDate.toDate()).format('LL')
+    const listItems = habitacion.imagen.map((number,i)=>
+	<li key={i}>{number}</li>
+	)
     return (
-        <div className="container  p-2">
-        <div className="row  ">
-            <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-4">
+        <div className="container my-10 mt-5 p-5">
+        <div className="row mt-6 ">
+            <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-10">
                 <div>
-                    <h1 className="display-4  ">Reserva Actual</h1>
+                    <h1 className="display-4  mt-10">Reserva Actual</h1>
                 </div>
                     <div className="row">
                         <div className="col-md-6 col-12 my-auto">

@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink,withRouter} from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
 import jquery from 'jquery';
+import rym from '../images/rym.jpg'
 // for changing navbar  color
 import {auth} from '../firebase'
 
@@ -21,10 +22,10 @@ const Navbar = (props) => {
     return (
     <>
         <nav className="navbar navbar-expand-lg navbar-dark py-2 fixed-top ">
-            <div className="container-fluid">
-                 
-                <h1 className="navbar-brand"  >Hostería Ríos y Montañas    </h1>
-                <button className="navbar-toggler" 
+            <div className="container d-flex justify-content-center  p-1">
+                <div className="ml-2 mb-4 mb-lg-0 ">
+                    <img src={rym} alt="logo-rios-y-montañas" width="230" height="230" className="img-fluid"/>  
+                <button className="navbar-toggler ml-2 mb-4  " 
                     type="button" 
                      data-bs-toggle="collapse" 
                      data-bs-target="#responsive-navbar-nav"
@@ -34,6 +35,7 @@ const Navbar = (props) => {
                     <span>
                         <FaAlignRight className="nav-icon" /></span>
                 </button>
+                </div> 
                 <div className="collapse navbar-collapse" id="responsive-navbar-nav">
                     <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li className="nav-item">

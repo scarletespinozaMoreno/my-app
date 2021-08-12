@@ -14,7 +14,10 @@ const SingleRoom2=(habitacion )=>{
     const [flag,setFlag] = React.useState(false)
     const [flag2,setFlag2] = React.useState(true)
     const id = auth.currentUser
-   
+ 
+    const listItems = room.descripcion.split(",").map((number,i)=>
+        <li key={i}>{number}</li>
+        )
     // <img   src={room.imagen} alt={room.categoria} className="img-fluid mb-3 flex" />
     React.useEffect(() => {
         if (id !== null ){
@@ -53,7 +56,7 @@ const SingleRoom2=(habitacion )=>{
           <div className="single-room-info">
               <article className="desc">
                  <h3>Detalles :</h3>
-                 <p>{room.descripcion}</p>
+                 <p><ul>{ listItems}</ul></p>
               </article>
               <article className="info">
                  <h3>Información: </h3>
