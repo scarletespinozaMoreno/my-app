@@ -4,27 +4,23 @@ import {withRouter} from 'react-router-dom';
 import moment from 'moment'
 import 'moment/locale/es'
 export const habitacionContext=React.createContext()
-
 const ReservaDisplay = ({habitacion}) => {
-     
     const desde=  moment(habitacion.startDate.toDate()).format('LL')
     const hasta=  moment(habitacion.endDate.toDate()).format('LL')
-
     return (
-        
         <div className="container my-10 mt-5 p-5">
         <div className="row mt-6 ">
             <div className="col-md-10 mx-auto col-12 card shadow-lg border-0 p-4  mt-10">
                 <div>
-                        <h1 className="display-4  mt-10">Reserva Actual</h1>
+                    <h1 className="display-4  mt-10">Reserva Actual</h1>
                 </div>
-                        <div className="row">
-                            <div className="col-md-6 col-12 my-auto">
-                                <img src={habitacion.imagen} className="img-fluid" alt="selected room" />
-                            </div>
-                            <div className="col-md-6 col-12 my-auto">
-                                <h1>Detalle </h1>
-                                <table className="table">
+                    <div className="row">
+                        <div className="col-md-6 col-12 my-auto">
+                            <img src={habitacion.imagen} className="img-fluid" alt="selected room" />
+                        </div>
+                        <div className="col-md-6 col-12 my-auto">
+                            <h1>Detalle </h1>
+                            <table className="table">
                                     <thead className="thead-light">
                                         <tr>
                                             <th>ID room</th>

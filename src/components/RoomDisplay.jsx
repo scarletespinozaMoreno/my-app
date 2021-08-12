@@ -6,12 +6,13 @@ export const habitacionContext=React.createContext()
  
 const RoomDisplay = ({habitacion}) => {
     const{room,cambioRoom}=React.useContext(RoomContext)
-    const {  categoria,descripcion,existencia,imagen,nombre,precio} = habitacion 
+    const {  categoria,descripcion,existencia,imagen,imagenes,nombre,precio} = habitacion 
     const cargarDatos = () => {
             room.categoria=categoria
             room.descripcion=descripcion
             room.existencia=existencia
             room.imagen=imagen
+            room.imagenes=imagenes
             room.nombre=nombre
             room.precio=precio
             cambioRoom(room)

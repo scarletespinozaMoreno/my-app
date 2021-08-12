@@ -20,7 +20,7 @@ export default class Booknow extends Component {
             diasFuera: 0,
             id:"",
             imagen:"",
-      
+            imagenes: [],
             startDate: null,
             endDate: null,
     };

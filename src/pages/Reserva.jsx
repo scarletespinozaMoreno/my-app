@@ -1,17 +1,10 @@
 import React from 'react'
- 
 import {auth,db} from '../firebase'
 import ReservaDisplay from './ReservaDisplay';
- 
-
-
-
 
 const Reserva = (props) => {
     var id = auth.currentUser.email;//mail para el id
     const [habitaciones, setHabitaciones] = React.useState([])
-    //console.log("MI USUARIO ACTUAL",id)    
-    //llamar datos
     React.useEffect(() => {
         const obtenerDatos = async () => {
               try {
@@ -30,7 +23,6 @@ const Reserva = (props) => {
     }
    // eslint-disable-next-line react-hooks/exhaustive-deps
     , [  ])
-    //console.log("ESTE ES EL MENU ",habitaciones)
     //recorrer
     //identificar y comparar
     //mostrar

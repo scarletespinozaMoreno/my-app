@@ -53,7 +53,20 @@ h6 {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
 
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
 .btn-primary {
   display: inline-block;
   text-decoration: none;
