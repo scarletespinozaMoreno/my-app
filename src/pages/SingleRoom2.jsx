@@ -5,7 +5,7 @@ import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import {auth} from '../firebase'
 import 'react-slideshow-image/dist/styles.css'
-
+import { MySlide } from './MySlide';
 import { Slide } from 'react-slideshow-image';
 
 export const habitacionContext=React.createContext()
@@ -14,7 +14,7 @@ const SingleRoom2=(habitacion )=>{
     const [flag,setFlag] = React.useState(false)
     const [flag2,setFlag2] = React.useState(true)
     const id = auth.currentUser
-    const slideImages = room.imagenes
+   
     // <img   src={room.imagen} alt={room.categoria} className="img-fluid mb-3 flex" />
     React.useEffect(() => {
         if (id !== null ){
@@ -37,22 +37,16 @@ const SingleRoom2=(habitacion )=>{
        <div className="container roomerror">
        <section className="single-room container">
           <div className="row">
-                <div className="col-md-5 col-12 mx-auto" >
-                    <div className="card border-0 shadow-lg mb-4">
-                    <Slide easing="ease">
-                        <div className="each-slide">
-                            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-                            
-                            </div>
-                        </div>
- 
+                <div className="col-md-6 col-sm-6 mx-auto" >
+                    <div className="card border-0 shadow-lg mb-4 ">
+                    <Slide easing="ease ">
+                        {room.imagenes.map(e => {
+                            return <MySlide key={e.id}
+                            habitacion={e} imagen={e} />             
+                        })}
                     </Slide>
                        
-                        {room.imagenes.map(e => {
-                            return <img
-                            key={e.id}
-                            habitacion={e} src={e} alt={room.categoria} className="img-fluid mb-3 flex mt-4" />             
-                        })}
+
                     </div>
                 </div>
           </div>
@@ -74,13 +68,15 @@ const SingleRoom2=(habitacion )=>{
        </section>
        {flag &&   
             <section className="room-extras">
-                <h3>Extras</h3>
-                <ul className="extras">
-                    <li> {room.descripcion} </li>
-                </ul>
+                <div className="row ">
+                    <h3>Extras</h3>
+                    <ul className="extras ">
+                        <li> {room.descripcion} </li>
+                    </ul>
+                </div>
                 <div className="p-4 clearfix">
                     <div className="row">
-                        <div className="col-md-3 col-12 ml-auto">
+                        <div className="col-md-3 col-6 ml-auto">
                             <Link to={`/booknow/${room.categoria}`} className="btn btn-outline-primary btn-block btn-lg float-right ">Registrar</Link>
                         </div>
                     </div>
@@ -89,16 +85,11 @@ const SingleRoom2=(habitacion )=>{
         }
        {flag2 &&   
             <section className="room-extras">
-            
                 <div className="p-4 ">
-                    <div className="row mt-4">
-                        <div className="col-md col-6 mt-4">
-                        <h1 className="font-weight-bolder"> Hostería Ríos y Montañas</h1>
-                                <h3><mark class> Le recuerda que para poder registrarse debe iniciar sesión.</mark></h3>
-                            <Link to={`/Login`} className="btn btn-outline-primary btn-block btn-lg float-right mt-4 ">Iniciar Sesión</Link>
-                        </div>
+                    <h1 className="font-weight-bolder"> Hostería Ríos y Montañas</h1>
+                        <h3><mark class> Le recuerda que para poder registrarse debe iniciar sesión.</mark></h3>
+                        <Link to={`/Login`} className="btn btn-outline-primary btn-block btn-lg float-right mt-4 ">Iniciar Sesión</Link>
                     </div>
-                </div>
             </section>
         }
         </div>

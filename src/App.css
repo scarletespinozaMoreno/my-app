@@ -58,13 +58,13 @@ h6 {
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 350px;
+  height: 400px;
 }
 
 .each-slide span {
-  padding: 20px;
+  padding: 2px;
   font-size: 20px;
-  background: #efefef;
+  background: #000000;
   text-align: center;
 }
 .btn-primary {
@@ -107,7 +107,7 @@ h6 {
   margin-top: 3rem;
 }
 .roomerror{
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .roomerror:hover .error{
   background-color: #2C3E50;

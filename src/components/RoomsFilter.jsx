@@ -6,7 +6,7 @@ import RoomFinal from '../pages/RoomFinal'
 
 const RoomsFilter = () => {
     const [data, setData] = React.useState("Habitaciones")
-    const [values,setValues] = React.useState(0)
+    const [values,setValues] = React.useState(700)
     const slider = React.createRef()
     return (
         <>
@@ -35,7 +35,7 @@ const RoomsFilter = () => {
                             className="col  col-12"
                             type="range"
                             ref={slider}
-                            min ={0} max={500}
+                            min ={0} max={700}
                             defaultValue={500}
                             onChange={(e) =>{
                                 const selected = e.target.value;
