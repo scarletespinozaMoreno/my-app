@@ -45,10 +45,11 @@ const Promociones = () => {
         <div>
                 <Hero hero="promocionesHero"></Hero>
                 <Banner title="Promociones" subtitle="Por formar parte de nuestra página disfruta estas promociones">
-                        <Link to="/" className="btn btn-warning">
+                        <Link to="/" className="btn btn-primary">
                             Volver al Inicio
                         </Link>
                 </Banner>
+
                 <div className=" mb-5 p-5">
                     <Title title="Promociones Disponibles" />
                     <div className="row row-cols-1 row-cols-md-3 mt-5">

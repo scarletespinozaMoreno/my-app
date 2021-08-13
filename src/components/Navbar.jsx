@@ -21,11 +21,11 @@ const Navbar = (props) => {
         }
     return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark py-2 sticky-top">
+        <nav className="navbar navbar-expand-lg navbar-dark py-2 sticky-top ">
             <div className="container d-flex justify-content-center  p-1">
                 <div className="ml-2 mb-4 mb-lg-0 ">
-                    <img src={rym} alt="logo-rios-y-montañas" width="230" height="230" className="img-fluid"/>  
-                <button className="navbar-toggler ml-2 mb-4  " 
+                    <img src={rym} alt="logo-rios-y-montañas" width="230" height="230" className="img-fluid "/>  
+                <button className="navbar-toggler ml-2 " 
                     type="button" 
                      data-bs-toggle="collapse" 
                      data-bs-target="#responsive-navbar-nav"
@@ -37,7 +37,7 @@ const Navbar = (props) => {
                 </button>
                 </div> 
                 <div className="collapse navbar-collapse" id="responsive-navbar-nav">
-                    <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav mr-auto mb-2 ">
                         <li className="nav-item">
                             <NavLink className="nav-link  " activeClassName="active_class"  exact to="/">Inicio</NavLink>
                         </li>

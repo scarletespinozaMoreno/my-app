@@ -36,10 +36,10 @@ const Contact = () => {
         <div className=" row mt-2">
                
                        <div className="col-md-7 mt-5 col- mx-auto"> 
-                       <h1>Ubicación de la Hostería</h1>
+                       <h1 className="p-2">Ubicación de la Hostería</h1>
                        <SimpleMap/>
                       
-                            <div className="card shadow-lg border-0 p-4 mt-4">
+                            <div className="card shadow-lg border-0 p-2 mt-4">
                                 <h1 id="contactH1" className="text-center text-white display-4 d-inline-block ">Contáctanos</h1>
                                 <div className="row">
                                     <div className="col-sm-6 col-md-5 col-lg-6">
@@ -56,18 +56,18 @@ const Contact = () => {
                            
                                     </div>
                                  <div className="col-sm-6 col-md-5 offset-md-3 col-lg-6 offset-lg-0">
-                                <form onSubmit={submitForm} className="form-group my-4 text-center">
+                                <form onSubmit={submitForm} className="form-group my-4 text-center p-2">
                                     <div className="row">
                                         <div className="col-md-6 col-12 mx-auto my-2">
                                             <label className="col-12">Nombre:</label>
-                                            <input type="text" className="form-control-lg"  
+                                            <input type="text" className="form-control-lg col-12 "  
                                             onChange={e=>setNombre(e.target.value)}
                                             value={nombre}
                                             placeholder="Su nombre..." required />
                                         </div>
                                         <div className="col-md-6 col-12 mx-auto my-2">
-                                        <label className="col-12">Apellido: </label>
-                                            <input type="text" className="form-control-lg" 
+                                        <label className="col-12 ">Apellido: </label>
+                                            <input type="text" className="form-control-lg   col-12  " 
                                             onChange={e=>setApellido(e.target.value)}
                                             value={apellido}
                                             placeholder="Su apellido..." required />
@@ -78,14 +78,14 @@ const Contact = () => {
                                         <div className="row">
                                             <div className="col-md-6 col-12 mx-auto my-2">
                                                 <label className="col-12">Correo Electrónico:</label>
-                                                <input type="email" className="form-control-lg" 
+                                                <input type="email" className="form-control-lg col-12" 
                                                 onChange={e=>setEmail(e.target.value)}
                                                 value={email}
                                                 placeholder="Su correo electrónico..." required />
                                             </div>
                                             <div className="col-md-6 col-12 mx-auto my-2">
                                             <label className="col-12">Teléfono:</label>
-                                                <input type="tel" className="form-control-lg" 
+                                                <input type="tel" className="form-control-lg col-12" 
                                                 onChange={e=>setTelefono(e.target.value)}
                                                 value={telefono}
                                                 placeholder="Su teléfono... " required />
