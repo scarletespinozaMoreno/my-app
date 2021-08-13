@@ -7,6 +7,7 @@ import es from 'date-fns/locale/es'
 import {RoomContext} from '../context/RoomProvider';
 import {auth,db} from '../firebase';
 registerLocale("es",es)
+
 export const habitacionContext=React.createContext()
 
 export default class Booknow extends Component {

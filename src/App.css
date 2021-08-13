@@ -23,6 +23,12 @@ body {
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
+.carousel-item{
+	height:32rem;
+	background:#777;
+	color: white; 
+	position: relative;
+}
 /* globals */
 h1 {
   font-size: 3em;
@@ -494,6 +500,31 @@ box-shadow: inset 0 -1px 0 #ddd;
   }
   .info {
     padding-left: 3rem;
+  }
+}
+
+/*FOR MAPS CHECK AND CHANGE*/
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
   }
 }
 /* end of single room*/

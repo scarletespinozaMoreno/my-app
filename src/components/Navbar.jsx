@@ -21,7 +21,7 @@ const Navbar = (props) => {
         }
     return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark py-2 fixed-top ">
+        <nav className="navbar navbar-expand-lg navbar-dark py-2 sticky-top">
             <div className="container d-flex justify-content-center  p-1">
                 <div className="ml-2 mb-4 mb-lg-0 ">
                     <img src={rym} alt="logo-rios-y-montañas" width="230" height="230" className="img-fluid"/>  

@@ -25,20 +25,14 @@ const RoomDisplay = ({habitacion}) => {
                     style={{ maxWidth: '425px',
                             height: '250px'
                      }}/>
-                    
                     <div className="price-top">
                         <h5>$ {precio}</h5>
                         <p>por noche</p>
                     </div>
-
-
                     <Link  to={`/rooms/${nombre}`} className="btn-warning1 room-info   text-center"  onClick={() =>{
-                                 
-                                 cargarDatos();
-                                
-                                 
-                             }}>{categoria}</Link> 
-             
+                        cargarDatos();}}>
+                        {categoria}
+                    </Link> 
             </div>   
         </div>
         );
