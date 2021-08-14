@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import DatePicker, {registerLocale}from "react-datepicker";
@@ -6,11 +6,17 @@ import "react-datepicker/dist/react-datepicker.css";
 import es from 'date-fns/locale/es'
 import {RoomContext} from '../context/RoomProvider';
 import {auth,db} from '../firebase';
+import BotonPayPal from "../components/botonPaypal";
+
 registerLocale("es",es)
 
 export const habitacionContext=React.createContext()
 
+
 export default class Booknow extends Component {
+    
+    
+
     
     constructor (props){
         super(props);
@@ -173,8 +179,10 @@ export default class Booknow extends Component {
                                     <option disabled>Seleccione método de pago </option>
                                     <option value="Credit">Crédito</option>
                                     <option value="Debit">Débito</option>
-                                    <option value="checkin">Pagar en el checking</option>
+                                    <option value="Debit">Paypal</option>
+                                
                                 </select>
+                                <BotonPayPal />
                             </div>
                         </div>
                         <div className="col-md-6 col-12 my-4 ">
