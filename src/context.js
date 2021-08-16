@@ -1,26 +1,11 @@
 import React, { Component } from 'react'
 import items from './data';
-import {db} from '../src/firebase'
+ 
 
 const RoomContext = React.createContext();
-const data =db.collection('habitaciones2')
+ 
 
-const obtenerDatos = async () => {
-    const arrayData=[]
-    try {
-      const snapshot = await data.get();
-        arrayData.push(snapshot.docs.map((doc) => (
-          {
-          ...doc.data()
-      })))
-
-      console.log(arrayData[0])
-    } catch (error) {
-        console.log(error)
-      }
-return arrayData[0]
-    }
-    
+  
 
   
 

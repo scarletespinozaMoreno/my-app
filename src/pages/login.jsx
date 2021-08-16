@@ -1,7 +1,8 @@
 import React from 'react'
 import {auth, db} from '../firebase'
 import {withRouter} from 'react-router-dom'
-
+import moment from 'moment'
+import 'moment/locale/es'
 const Login = (props) => {
     
     const [email, setEmail] = React.useState('')
@@ -82,16 +83,13 @@ const Login = (props) => {
                 direction: 'N/A',
                 cellphone:'N/A',
                 ci:'N/A',
-                fecha: Date.now()       
+                fechaCreacion: moment(Date.now()).format('LLL')
 
             })
-            //en el caso de crear coleciones para los usuarios indiviruales, pero se puede obviar para poenr una coleccion de habitaciones regitradas o en uso. dentro de cada user
+            //en el caso de crear coleciones para los usuarios indiviruales, 
+            //pero se puede obviar para poenr una coleccion de habitaciones regitradas o en uso. dentro de cada user
 
-           // await db.collection(res.user.uid).add({
-           //     name: 'EJEMPLO->A QUI SE AGREGAN LOS DATOS PARA EL USUARIO ACTUAL ',
-       //  fecha: Date.now()
-       //     })
-        //    
+    
             setEmail('')
             setPass('')
             setError(null)

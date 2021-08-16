@@ -44,7 +44,7 @@ const Actividades = () => {
         <Hero hero="actividadesHero">
         </Hero>
         <Banner title="Actividades disponibles" subtitle="Disfruta de nuevas experiencias">
-                <Link to="/" className="btn btn-warning">
+                <Link to="/" className="btn btn-primary">
                     Volver al Inicio
                 </Link>
         </Banner>
