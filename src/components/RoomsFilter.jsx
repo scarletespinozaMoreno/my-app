@@ -1,58 +1,64 @@
- 
 import React from 'react'
-import RoomFinal from '../pages/RoomFinal'
- 
- 
+import {useContext} from 'react'
+import {RoomContext} from '../context';
+import Title from '../components/Title';
+//to get all unique value
+const getUnique = (items,value) => {
+return [...new Set(items.map(item => item[value]))]
+}
+export default function RoomsFilter({rooms}) {
+    const context = useContext(RoomContext);
+    const {
+    handleChange , type ,capacity ,price,minPrice,maxPrice,minSize,maxSize,breakfast,pets
+    } = context;
 
-const RoomsFilter = () => {
-    const [data, setData] = React.useState("Habitaciones")
-    const [values,setValues] = React.useState(700)
-    const slider = React.createRef()
+    //get unique type
+    let types = getUnique(rooms,'type');
+    //get all
+    types = ['all',...types];
+    
+    //map to jsx
+    types = types.map((item,index) => {
+    return <option value={item} key={index}>{item}</option>
+    });
+    let people = getUnique(rooms,'capacity');
+    people = people.map((item,index) => {
+    return <option key={index} value={item}>{item}</option>
+    })
     return (
-        <>
-        <div className="container mt-4">
+        <div className="container mt-5">
+            <Title title="Buscar Habitaciones" />
             <div className="row">
-                <div className="col-md-3 col-12">
+                <div className="col-md-6 col-12">
                     <div className="form-group">
-
-                    <form >
-                        <label htmlFor="type">Tipo de Habitación</label> 
-                        <select name="type" value={data} className="form-control "  onChange={(e) =>{
-                                const selected = e.target.value;
-                                setData(selected);
-                            }}>
-                            <option value="Habitaciones">Habitaciones</option>
-                            <option value="Habitacion Simple">Habitacion Simple</option>
-                            <option value="Habitacion Doble">Habitacion Doble</option>
-                            <option value="Habitacion Triple">Habitacion Triple</option>
-                            <option value="Suite">Suite</option>
+                        <label htmlFor="type">Tipo de Habitación</label>
+                        <select name="type" id="type" value={type} className="form-control" onChange={handleChange}>
+                            {types}
                         </select>
-
-                    </form>
-                    <div className="col">
-                            <label htmlFor="price">Precio de habitación: {values} </label>
-                            <input
-                            className="col  col-12"
-                            type="range"
-                            ref={slider}
-                            min ={0} max={700}
-                            defaultValue={500}
-                            onChange={(e) =>{
-                                const selected = e.target.value;
-                                setValues(selected)
-                                setData(selected);
-                            }}/>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="capacity">Capacidad</label>
+                        <select name="capacity" id="capacity" value={capacity} className="form-control" onChange={handleChange}>
+                            {people}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="price">precio {price}</label>
+                        <input type="range" name="price" min={minPrice} max={maxPrice} id="price" value={price} onChange={handleChange} className="form-control" />
                     </div>
                 </div>
+                <div className="col-md-4 col-12">
+                    <div className="custom-control custom-checkbox my-5">
+                        <input type="checkbox" className="custom-control-input" name="breakfast" id="breakfast" checked={breakfast} onChange={handleChange} />
+                        <label htmlFor="breakfast" className="custom-control-label">Desayuno</label>
+                    </div>
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" name="pets" id="pets" checked={pets} onChange={handleChange} />
+                        <label htmlFor="pets" className="custom-control-label">Mascotas</label>
+                    </div>
+          
+                </div>
             </div>
-            <RoomFinal room={data}/>  
         </div>
-       </>
     )
 }
-
-export default RoomsFilter
-
- 
-  

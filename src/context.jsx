@@ -1,29 +1,23 @@
 import React, { Component } from 'react'
 import items from './data';
 import {db} from '../src/firebase'
-
 const RoomContext = React.createContext();
-const data =db.collection('habitaciones2')
+const data = db.collection('habitaciones2')
 
-const obtenerDatos = async () => {
-    const arrayData=[]
-    try {
-      const snapshot = await data.get();
-        arrayData.push(snapshot.docs.map((doc) => (
-          {
-          ...doc.data()
-      })))
 
-      console.log(arrayData[0])
-    } catch (error) {
-        console.log(error)
-      }
-return arrayData[0]
-    }
-    
 
-  
+//onsole.log("ITEMS actualizados ", listData[0] ) 
+function  obtenerDatos (){
+    const snapshot =data.get();
+    const arrayData=snapshot.docs.map((doc) => (
+        {
+        ...doc.data()
+    }))
+   
+    //listData.push(arrayData)
 
+  return arrayData
+}    
 
 export default class RoomProvider extends Component {
     state={
@@ -42,9 +36,6 @@ export default class RoomProvider extends Component {
         pets: false
     };
     componentDidMount(){
-
-
-
         let rooms = this.formatData(items);
         let featuredRooms = rooms.filter(room => room.featured === true);
         let maxPrice = Math.max(...rooms.map(item => item.price));
@@ -81,7 +72,7 @@ export default class RoomProvider extends Component {
         {
             [name]: value
         },this.filterRooms)
-    }   
+    }
     filterRooms = () => {
         let{
             rooms,type,capacity,price,minSize,maxSize,breakfast,pets

@@ -11,7 +11,6 @@ import Error from './pages/Error';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Profile from './pages/Profile';
-import Reserva from './pages/Reserva';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import Booknow2 from './pages/Booknow2';
@@ -21,8 +20,6 @@ import {auth } from './firebase'
 import RoomProvider from './context/RoomProvider'
 import Actividades from './pages/Actividades';
 import Promociones from './pages/Promociones';
-import RoomsProvider from './context/RoomsProvider';
-
 function App(props) {
   const [firebaseUser, setFirebaseUser] = React.useState(false)
   React.useEffect(() => {
@@ -46,19 +43,20 @@ function App(props) {
           <Route exact path="/Actividades" component={Actividades} />
           <Route exact path="/Promociones" component={Promociones} />
           <RoomProvider>
-          <RoomsProvider>
-          <Route exact path="/Reserva/" component={Reserva}/>
           <Route exact path="/rooms/" component={Rooms}/>
           <Route exact path="/Login/" component={Login}/>
+ 
           <Route exact path="/Profile/" component={Profile}/>
           <Route exact path="/Reset/" component={Reset}/>
+     
           <Route exact path="/rooms/:categoria">
             <SingleRoom2/>
           </Route>
           <Route exact path="/booknow/:slug">
             <Booknow2/>
           </Route>   
-          </RoomsProvider>
+          
+          
           </RoomProvider> 
           <Route component={Error}/>
         </Switch>

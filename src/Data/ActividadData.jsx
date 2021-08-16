@@ -17,6 +17,7 @@ export const getActividades = async () => {
                 doc.data().Capacidad,
                 doc.data().Titulo
             );
+
             array.push(actividad);
         });
         return array;

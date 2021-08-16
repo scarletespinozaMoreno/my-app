@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Josefin Sans', cursive !important;
+  font-family: 'Nunito', sans-serif;
 }
 * {
   margin: 0;
@@ -12,7 +12,7 @@ body {
  
 
 :root {
-  --primaryColor: #1b5f9e;
+  --primaryColor: #38589b;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -22,12 +22,6 @@ body {
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-}
-.carousel-item{
-	height:32rem;
-	background:#777;
-	color: white; 
-	position: relative;
 }
 /* globals */
 h1 {
@@ -59,20 +53,7 @@ h6 {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
-.each-slide > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  height: 400px;
-}
 
-.each-slide span {
-  padding: 2px;
-  font-size: 20px;
-  background: #000000;
-  text-align: center;
-}
 .btn-primary {
   display: inline-block;
   text-decoration: none;
@@ -85,14 +66,14 @@ h6 {
   text-transform: uppercase;
   cursor: pointer;
 }
-.btn-warning1 {
+.btn-warning {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   color: var(--mainBlack);
-  background: 	#BDBEC3;
+  background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
-  border: 3px solid rgb(255, 255, 255)!important;
+  border: 3px solid var(--primaryColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -100,20 +81,20 @@ h6 {
 .btn-primary:hover{
   text-decoration: none;
   background: transparent!important;
-  color: var(--primaryColor);
+  color: #fff!important;
 }
-.btn-warning1:hover{
+.btn-warning:hover{
   text-decoration: none;
   background: transparent!important;
-  color: rgb(255, 255, 255)!important;
-} 
+  color: yellow!important;
+}
 .loading {
   text-transform: capitalize;
   text-align: center;
   margin-top: 3rem;
 }
 .roomerror{
-  margin-top: 20px;
+  margin-top: 100px;
 }
 .roomerror:hover .error{
   background-color: #2C3E50;
@@ -157,7 +138,7 @@ h6 {
   -o-transition: .5s linear;
 }
 .navbar {
-  background-color:  #1b5f9e;
+  background-color:  #38589b!important;
   
 }
 
@@ -500,31 +481,6 @@ box-shadow: inset 0 -1px 0 #ddd;
   }
   .info {
     padding-left: 3rem;
-  }
-}
-
-/*FOR MAPS CHECK AND CHANGE*/
-
-/* Create two columns that float next to eachother */
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
   }
 }
 /* end of single room*/

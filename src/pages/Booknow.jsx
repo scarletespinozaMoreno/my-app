@@ -126,8 +126,6 @@ export default class Booknow extends Component {
                                     <option value="Debit">Debit Card</option>
                                     <option value="checkin">Pay during Checkin</option>
                                 </select>
-                                
-
                             </div>
                         </div>
                         <div className="col-md-6 col-12 my-auto">

@@ -2,7 +2,6 @@ import React from 'react';
 import {NavLink,withRouter} from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
 import jquery from 'jquery';
-import rym from '../images/rym.jpg'
 // for changing navbar  color
 import {auth} from '../firebase'
 
@@ -21,39 +20,21 @@ const Navbar = (props) => {
         }
     return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark py-2 sticky-top ">
-            <div className="container d-flex justify-content-center  p-1">
-                <div className="ml-2 mb-4 mb-lg-0 ">
-                    <img src={rym} alt="logo-rios-y-montañas" width="230" height="230" className="img-fluid "/>  
-                <button className="navbar-toggler ml-2 " 
-                    type="button" 
-                     data-bs-toggle="collapse" 
-                     data-bs-target="#responsive-navbar-nav"
-                     aria-controls="responsive-navbar-nav"
-                     aria-expanded="false"
-                     aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-sm navbar-dark py-2 fixed-top">
+            <div className="container-fluid mb-3">
+                <span className="navbar-brand font-weight-bolder">Hostería Ríos y Montañas</span>
+                <a href="void(0)" className="navbar-toggler border-0" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span>
                         <FaAlignRight className="nav-icon" /></span>
-                </button>
-                </div> 
-                <div className="collapse navbar-collapse" id="responsive-navbar-nav">
-                    <ul className="navbar-nav mr-auto mb-2 ">
-                        <li className="nav-item">
-                            <NavLink className="nav-link  " activeClassName="active_class"  exact to="/">Inicio</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  "  activeClassName="active_class"  exact to="/rooms">Habitaciones</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link  "  activeClassName="active_class"  exact to="/Actividades">Actividades</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/Nosotros">Nosotros</NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink className="nav-link"  activeClassName="active_class"  exact to="/Contact">Contáctanos</NavLink>
-                        </li>
+                </a>
+                <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+                    <ul className="navbar-nav  mr-auto">
+                            <NavLink className="nav-link"  exact to="/">Inicio</NavLink>
+                            <NavLink className="nav-link"  exact to="/rooms">Habitaciones</NavLink>
+                            <NavLink className="nav-link"  exact to="/Actividades">Actividades</NavLink>
+                            <NavLink className="nav-link"  exact to="/Nosotros">Nosotros</NavLink>
+                            <NavLink className="nav-link"  exact to="/Contact">Contáctanos</NavLink>
+                            
                     </ul>
                 </div>
 
@@ -63,27 +44,17 @@ const Navbar = (props) => {
                             {
                         props.firebaseUser !== null ? (
                             <ul className="navbar-nav ml-auto "  >
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" exact to="/Promociones">Promociones</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" exact to="/Reserva/">Mis Reservas</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
-                                </li>
-                                <li className="nav-item text-center">
-                                    <button className="btn btn-outline-light text-center" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
-                                </li>
+                                <NavLink className="nav-link" exact to="/Promociones">Promociones</NavLink>
+                                <NavLink className="nav-link" exact to="/Reservas/">Mis Reservas</NavLink>
+                                <NavLink className="nav-link" exact to="/Profile/">Perfil</NavLink>
+                                <button className="btn btn-outline-light" onClick={() => cerrarSesion()}>Cerrar Sesión</button>
+                                
                             </ul>
                         
                         
                         ): (
                             <ul className="navbar-nav ml-auto "  >
-                                 <li className="nav-item"> 
                                     <NavLink className="nav-link ml-auto" to="/Login">Login</NavLink>
-                                 </li>
-                                    
                             </ul>
                        
                         )

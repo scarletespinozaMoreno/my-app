@@ -10,7 +10,6 @@ const RoomProvider =(props)=>{
         existencia:'',
         imagen:'',
         nombre:'',
-        imagenes:[],
         precio:'none',
     }
     const[room,setRoom]=React.useState(getRoom)

@@ -5,7 +5,7 @@ import { SocialIcon } from 'react-social-icons';
 
 const Footer = () => {
     return (
-        <footer  className="row bg-light text-dark-50 mt-5">
+        <footer  className="row bg-light text-dark-50">
             <div>
                 <div className="row justify-content-center " >
                 
