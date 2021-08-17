@@ -28,6 +28,7 @@ export default class Booknow extends Component {
             id:"",
             imagen:"",
             imagenes: [],
+            existencia:"",
             startDate: null,
             endDate: null,
     };
@@ -85,6 +86,7 @@ export default class Booknow extends Component {
         this.state.id=room.room.nombre
         this.state.total=total
         this.state.diasFuera=daysLeft
+        this.state.existencia = true 
         this.state.imagen=room.room.imagen
         return (
             <div className="container my-10 mt-5 p-5">
