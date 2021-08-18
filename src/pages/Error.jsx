@@ -8,7 +8,7 @@ export default function Error() {
     return (
         <>
         <Hero hero="roomsError" />
-        <Banner title="ERROR 404 NOT FOUND" subtitle="You are lost !! ITs dark everywhere">
+        <Banner title="ERROR 404 NOT FOUNDD" subtitle="You are lost !! ITs dark everywhere">
                 <FaRegMeh className="lost"></FaRegMeh>
                 <Link to="/" className="btn btn-warning">
                       Regresar al Inicio 
